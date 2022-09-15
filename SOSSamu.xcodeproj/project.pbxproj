@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */; };
 		ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */; };
-		ACC430F528D3AFB100FBBDCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F428D3AFB100FBBDCD /* ViewController.swift */; };
 		ACC430F828D3AFB100FBBDCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC430F628D3AFB100FBBDCD /* Main.storyboard */; };
 		ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F928D3AFB100FBBDCD /* SOSSamu.xcdatamodeld */; };
 		ACC430FD28D3AFB400FBBDCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */; };
@@ -17,6 +16,11 @@
 		ACC4310B28D3AFB500FBBDCD /* SOSSamuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4310A28D3AFB500FBBDCD /* SOSSamuTests.swift */; };
 		ACC4311528D3AFB500FBBDCD /* SOSSamuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4311428D3AFB500FBBDCD /* SOSSamuUITests.swift */; };
 		ACC4311728D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4311628D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift */; };
+		ACC4312C28D3BA0E00FBBDCD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4312B28D3BA0E00FBBDCD /* LoginView.swift */; };
+		ACC4312E28D3BD0F00FBBDCD /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4312D28D3BD0F00FBBDCD /* LabelView.swift */; };
+		ACC4313028D3C05C00FBBDCD /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4312F28D3C05C00FBBDCD /* TextFieldView.swift */; };
+		ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4313128D3C44000FBBDCD /* ButtonView.swift */; };
+		ACC4313428D3D37700FBBDCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4313328D3D37700FBBDCD /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,6 @@
 		ACC430ED28D3AFB100FBBDCD /* SOSSamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOSSamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACC430F428D3AFB100FBBDCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACC430F728D3AFB100FBBDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACC430FA28D3AFB100FBBDCD /* SOSSamu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SOSSamu.xcdatamodel; sourceTree = "<group>"; };
 		ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,11 @@
 		ACC4311028D3AFB500FBBDCD /* SOSSamuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOSSamuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC4311428D3AFB500FBBDCD /* SOSSamuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSamuUITests.swift; sourceTree = "<group>"; };
 		ACC4311628D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSamuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ACC4312B28D3BA0E00FBBDCD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		ACC4312D28D3BD0F00FBBDCD /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		ACC4312F28D3C05C00FBBDCD /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		ACC4313128D3C44000FBBDCD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		ACC4313328D3D37700FBBDCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +109,10 @@
 		ACC430EF28D3AFB100FBBDCD /* SOSSamu */ = {
 			isa = PBXGroup;
 			children = (
-				ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */,
-				ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */,
-				ACC430F428D3AFB100FBBDCD /* ViewController.swift */,
+				ACC4312528D3B87000FBBDCD /* Source */,
+				ACC4312428D3B84700FBBDCD /* Resource */,
+				ACC4312328D3B82C00FBBDCD /* AppDelegate */,
 				ACC430F628D3AFB100FBBDCD /* Main.storyboard */,
-				ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */,
-				ACC430FE28D3AFB400FBBDCD /* LaunchScreen.storyboard */,
 				ACC4310128D3AFB400FBBDCD /* Info.plist */,
 				ACC430F928D3AFB100FBBDCD /* SOSSamu.xcdatamodeld */,
 			);
@@ -128,6 +134,76 @@
 				ACC4311628D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift */,
 			);
 			path = SOSSamuUITests;
+			sourceTree = "<group>";
+		};
+		ACC4312328D3B82C00FBBDCD /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */,
+				ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		ACC4312428D3B84700FBBDCD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				ACC430FE28D3AFB400FBBDCD /* LaunchScreen.storyboard */,
+				ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		ACC4312528D3B87000FBBDCD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4312828D3B8C600FBBDCD /* View */,
+				ACC4312728D3B89100FBBDCD /* Components */,
+				ACC4312928D3B8D700FBBDCD /* Coordinator */,
+				ACC4312628D3B87F00FBBDCD /* Model */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		ACC4312628D3B87F00FBBDCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACC4312728D3B89100FBBDCD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4312D28D3BD0F00FBBDCD /* LabelView.swift */,
+				ACC4312F28D3C05C00FBBDCD /* TextFieldView.swift */,
+				ACC4313128D3C44000FBBDCD /* ButtonView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ACC4312828D3B8C600FBBDCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4312A28D3B92700FBBDCD /* UserLogin */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACC4312928D3B8D700FBBDCD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ACC4312A28D3B92700FBBDCD /* UserLogin */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4312B28D3BA0E00FBBDCD /* LoginView.swift */,
+				ACC4313328D3D37700FBBDCD /* LoginViewController.swift */,
+			);
+			path = UserLogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC430F528D3AFB100FBBDCD /* ViewController.swift in Sources */,
+				ACC4313028D3C05C00FBBDCD /* TextFieldView.swift in Sources */,
+				ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */,
 				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
 				ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */,
+				ACC4312C28D3BA0E00FBBDCD /* LoginView.swift in Sources */,
+				ACC4313428D3D37700FBBDCD /* LoginViewController.swift in Sources */,
 				ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */,
+				ACC4312E28D3BD0F00FBBDCD /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
