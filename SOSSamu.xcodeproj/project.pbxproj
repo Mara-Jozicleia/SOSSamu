@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */; };
+		ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */; };
+		ACC430F528D3AFB100FBBDCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F428D3AFB100FBBDCD /* ViewController.swift */; };
+		ACC430F828D3AFB100FBBDCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC430F628D3AFB100FBBDCD /* Main.storyboard */; };
+		ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F928D3AFB100FBBDCD /* SOSSamu.xcdatamodeld */; };
+		ACC430FD28D3AFB400FBBDCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */; };
+		ACC4310028D3AFB400FBBDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC430FE28D3AFB400FBBDCD /* LaunchScreen.storyboard */; };
+		ACC4310B28D3AFB500FBBDCD /* SOSSamuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4310A28D3AFB500FBBDCD /* SOSSamuTests.swift */; };
+		ACC4311528D3AFB500FBBDCD /* SOSSamuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4311428D3AFB500FBBDCD /* SOSSamuUITests.swift */; };
+		ACC4311728D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4311628D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACC4310728D3AFB500FBBDCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACC430E528D3AFB100FBBDCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACC430EC28D3AFB100FBBDCD;
+			remoteInfo = SOSSamu;
+		};
+		ACC4311128D3AFB500FBBDCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACC430E528D3AFB100FBBDCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACC430EC28D3AFB100FBBDCD;
+			remoteInfo = SOSSamu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACC430ED28D3AFB100FBBDCD /* SOSSamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOSSamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ACC430F428D3AFB100FBBDCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACC430F728D3AFB100FBBDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACC430FA28D3AFB100FBBDCD /* SOSSamu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SOSSamu.xcdatamodel; sourceTree = "<group>"; };
+		ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACC430FF28D3AFB400FBBDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ACC4310128D3AFB400FBBDCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC4310628D3AFB500FBBDCD /* SOSSamuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOSSamuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC4310A28D3AFB500FBBDCD /* SOSSamuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSamuTests.swift; sourceTree = "<group>"; };
+		ACC4311028D3AFB500FBBDCD /* SOSSamuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOSSamuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC4311428D3AFB500FBBDCD /* SOSSamuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSamuUITests.swift; sourceTree = "<group>"; };
+		ACC4311628D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSamuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACC430EA28D3AFB100FBBDCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC4310328D3AFB500FBBDCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC4310D28D3AFB500FBBDCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACC430E428D3AFB100FBBDCD = {
+			isa = PBXGroup;
+			children = (
+				ACC430EF28D3AFB100FBBDCD /* SOSSamu */,
+				ACC4310928D3AFB500FBBDCD /* SOSSamuTests */,
+				ACC4311328D3AFB500FBBDCD /* SOSSamuUITests */,
+				ACC430EE28D3AFB100FBBDCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACC430EE28D3AFB100FBBDCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACC430ED28D3AFB100FBBDCD /* SOSSamu.app */,
+				ACC4310628D3AFB500FBBDCD /* SOSSamuTests.xctest */,
+				ACC4311028D3AFB500FBBDCD /* SOSSamuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACC430EF28D3AFB100FBBDCD /* SOSSamu */ = {
+			isa = PBXGroup;
+			children = (
+				ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */,
+				ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */,
+				ACC430F428D3AFB100FBBDCD /* ViewController.swift */,
+				ACC430F628D3AFB100FBBDCD /* Main.storyboard */,
+				ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */,
+				ACC430FE28D3AFB400FBBDCD /* LaunchScreen.storyboard */,
+				ACC4310128D3AFB400FBBDCD /* Info.plist */,
+				ACC430F928D3AFB100FBBDCD /* SOSSamu.xcdatamodeld */,
+			);
+			path = SOSSamu;
+			sourceTree = "<group>";
+		};
+		ACC4310928D3AFB500FBBDCD /* SOSSamuTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4310A28D3AFB500FBBDCD /* SOSSamuTests.swift */,
+			);
+			path = SOSSamuTests;
+			sourceTree = "<group>";
+		};
+		ACC4311328D3AFB500FBBDCD /* SOSSamuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4311428D3AFB500FBBDCD /* SOSSamuUITests.swift */,
+				ACC4311628D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift */,
+			);
+			path = SOSSamuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACC430EC28D3AFB100FBBDCD /* SOSSamu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACC4311A28D3AFB500FBBDCD /* Build configuration list for PBXNativeTarget "SOSSamu" */;
+			buildPhases = (
+				ACC430E928D3AFB100FBBDCD /* Sources */,
+				ACC430EA28D3AFB100FBBDCD /* Frameworks */,
+				ACC430EB28D3AFB100FBBDCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SOSSamu;
+			productName = SOSSamu;
+			productReference = ACC430ED28D3AFB100FBBDCD /* SOSSamu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACC4310528D3AFB500FBBDCD /* SOSSamuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACC4311D28D3AFB500FBBDCD /* Build configuration list for PBXNativeTarget "SOSSamuTests" */;
+			buildPhases = (
+				ACC4310228D3AFB500FBBDCD /* Sources */,
+				ACC4310328D3AFB500FBBDCD /* Frameworks */,
+				ACC4310428D3AFB500FBBDCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACC4310828D3AFB500FBBDCD /* PBXTargetDependency */,
+			);
+			name = SOSSamuTests;
+			productName = SOSSamuTests;
+			productReference = ACC4310628D3AFB500FBBDCD /* SOSSamuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ACC4310F28D3AFB500FBBDCD /* SOSSamuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACC4312028D3AFB500FBBDCD /* Build configuration list for PBXNativeTarget "SOSSamuUITests" */;
+			buildPhases = (
+				ACC4310C28D3AFB500FBBDCD /* Sources */,
+				ACC4310D28D3AFB500FBBDCD /* Frameworks */,
+				ACC4310E28D3AFB500FBBDCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACC4311228D3AFB500FBBDCD /* PBXTargetDependency */,
+			);
+			name = SOSSamuUITests;
+			productName = SOSSamuUITests;
+			productReference = ACC4311028D3AFB500FBBDCD /* SOSSamuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACC430E528D3AFB100FBBDCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					ACC430EC28D3AFB100FBBDCD = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					ACC4310528D3AFB500FBBDCD = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = ACC430EC28D3AFB100FBBDCD;
+					};
+					ACC4310F28D3AFB500FBBDCD = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = ACC430EC28D3AFB100FBBDCD;
+					};
+				};
+			};
+			buildConfigurationList = ACC430E828D3AFB100FBBDCD /* Build configuration list for PBXProject "SOSSamu" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACC430E428D3AFB100FBBDCD;
+			productRefGroup = ACC430EE28D3AFB100FBBDCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACC430EC28D3AFB100FBBDCD /* SOSSamu */,
+				ACC4310528D3AFB500FBBDCD /* SOSSamuTests */,
+				ACC4310F28D3AFB500FBBDCD /* SOSSamuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACC430EB28D3AFB100FBBDCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACC4310028D3AFB400FBBDCD /* LaunchScreen.storyboard in Resources */,
+				ACC430FD28D3AFB400FBBDCD /* Assets.xcassets in Resources */,
+				ACC430F828D3AFB100FBBDCD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC4310428D3AFB500FBBDCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC4310E28D3AFB500FBBDCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACC430E928D3AFB100FBBDCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACC430F528D3AFB100FBBDCD /* ViewController.swift in Sources */,
+				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
+				ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */,
+				ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC4310228D3AFB500FBBDCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACC4310B28D3AFB500FBBDCD /* SOSSamuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC4310C28D3AFB500FBBDCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACC4311728D3AFB500FBBDCD /* SOSSamuUITestsLaunchTests.swift in Sources */,
+				ACC4311528D3AFB500FBBDCD /* SOSSamuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACC4310828D3AFB500FBBDCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACC430EC28D3AFB100FBBDCD /* SOSSamu */;
+			targetProxy = ACC4310728D3AFB500FBBDCD /* PBXContainerItemProxy */;
+		};
+		ACC4311228D3AFB500FBBDCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACC430EC28D3AFB100FBBDCD /* SOSSamu */;
+			targetProxy = ACC4311128D3AFB500FBBDCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ACC430F628D3AFB100FBBDCD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACC430F728D3AFB100FBBDCD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACC430FE28D3AFB400FBBDCD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACC430FF28D3AFB400FBBDCD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACC4311828D3AFB500FBBDCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACC4311928D3AFB500FBBDCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACC4311B28D3AFB500FBBDCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SOSSamu/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fiap.SOSSamu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ACC4311C28D3AFB500FBBDCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SOSSamu/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fiap.SOSSamu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ACC4311E28D3AFB500FBBDCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fiap.SOSSamuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOSSamu.app/SOSSamu";
+			};
+			name = Debug;
+		};
+		ACC4311F28D3AFB500FBBDCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fiap.SOSSamuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOSSamu.app/SOSSamu";
+			};
+			name = Release;
+		};
+		ACC4312128D3AFB500FBBDCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fiap.SOSSamuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SOSSamu;
+			};
+			name = Debug;
+		};
+		ACC4312228D3AFB500FBBDCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fiap.SOSSamuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SOSSamu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACC430E828D3AFB100FBBDCD /* Build configuration list for PBXProject "SOSSamu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC4311828D3AFB500FBBDCD /* Debug */,
+				ACC4311928D3AFB500FBBDCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACC4311A28D3AFB500FBBDCD /* Build configuration list for PBXNativeTarget "SOSSamu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC4311B28D3AFB500FBBDCD /* Debug */,
+				ACC4311C28D3AFB500FBBDCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACC4311D28D3AFB500FBBDCD /* Build configuration list for PBXNativeTarget "SOSSamuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC4311E28D3AFB500FBBDCD /* Debug */,
+				ACC4311F28D3AFB500FBBDCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACC4312028D3AFB500FBBDCD /* Build configuration list for PBXNativeTarget "SOSSamuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC4312128D3AFB500FBBDCD /* Debug */,
+				ACC4312228D3AFB500FBBDCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ACC430F928D3AFB100FBBDCD /* SOSSamu.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ACC430FA28D3AFB100FBBDCD /* SOSSamu.xcdatamodel */,
+			);
+			currentVersion = ACC430FA28D3AFB100FBBDCD /* SOSSamu.xcdatamodel */;
+			path = SOSSamu.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ACC430E528D3AFB100FBBDCD /* Project object */;
+}
