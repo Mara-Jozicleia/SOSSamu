@@ -21,6 +21,13 @@
 		ACC4313028D3C05C00FBBDCD /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4312F28D3C05C00FBBDCD /* TextFieldView.swift */; };
 		ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4313128D3C44000FBBDCD /* ButtonView.swift */; };
 		ACC4313428D3D37700FBBDCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4313328D3D37700FBBDCD /* LoginViewController.swift */; };
+		ACC45D4D28D4FDF900BEB954 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC45D4C28D4FDF900BEB954 /* Colors.xcassets */; };
+		ACE8306B28D500C700E18B2A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8306A28D500C700E18B2A /* Colors.swift */; };
+		ACE8306E28D50A0E00E18B2A /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8306D28D50A0E00E18B2A /* LoginCoordinator.swift */; };
+		ACE8307028D50A4800E18B2A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8306F28D50A4800E18B2A /* Coordinator.swift */; };
+		ACE8307328D5138100E18B2A /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307228D5138100E18B2A /* PositionView.swift */; };
+		ACE8307528D51E6100E18B2A /* PositionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307428D51E6100E18B2A /* PositionViewCoordinator.swift */; };
+		ACE8307728D5237F00E18B2A /* PositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307628D5237F00E18B2A /* PositionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,13 @@
 		ACC4312F28D3C05C00FBBDCD /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		ACC4313128D3C44000FBBDCD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		ACC4313328D3D37700FBBDCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ACC45D4C28D4FDF900BEB954 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		ACE8306A28D500C700E18B2A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		ACE8306D28D50A0E00E18B2A /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		ACE8306F28D50A4800E18B2A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ACE8307228D5138100E18B2A /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
+		ACE8307428D51E6100E18B2A /* PositionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewCoordinator.swift; sourceTree = "<group>"; };
+		ACE8307628D5237F00E18B2A /* PositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +162,7 @@
 		ACC4312428D3B84700FBBDCD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				ACC45D4828D4F7E700BEB954 /* Colors */,
 				ACC430FE28D3AFB400FBBDCD /* LaunchScreen.storyboard */,
 				ACC430FC28D3AFB400FBBDCD /* Assets.xcassets */,
 			);
@@ -157,19 +172,12 @@
 		ACC4312528D3B87000FBBDCD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ACE8307128D5132900E18B2A /* Position */,
+				ACE8306C28D5098E00E18B2A /* Coordinator */,
 				ACC4312828D3B8C600FBBDCD /* View */,
 				ACC4312728D3B89100FBBDCD /* Components */,
-				ACC4312928D3B8D700FBBDCD /* Coordinator */,
-				ACC4312628D3B87F00FBBDCD /* Model */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		ACC4312628D3B87F00FBBDCD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		ACC4312728D3B89100FBBDCD /* Components */ = {
@@ -190,13 +198,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		ACC4312928D3B8D700FBBDCD /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		ACC4312A28D3B92700FBBDCD /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +205,34 @@
 				ACC4313328D3D37700FBBDCD /* LoginViewController.swift */,
 			);
 			path = UserLogin;
+			sourceTree = "<group>";
+		};
+		ACC45D4828D4F7E700BEB954 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				ACC45D4C28D4FDF900BEB954 /* Colors.xcassets */,
+				ACE8306A28D500C700E18B2A /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		ACE8306C28D5098E00E18B2A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ACE8306D28D50A0E00E18B2A /* LoginCoordinator.swift */,
+				ACE8306F28D50A4800E18B2A /* Coordinator.swift */,
+				ACE8307428D51E6100E18B2A /* PositionViewCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ACE8307128D5132900E18B2A /* Position */ = {
+			isa = PBXGroup;
+			children = (
+				ACE8307228D5138100E18B2A /* PositionView.swift */,
+				ACE8307628D5237F00E18B2A /* PositionViewController.swift */,
+			);
+			path = Position;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC4310028D3AFB400FBBDCD /* LaunchScreen.storyboard in Resources */,
+				ACC45D4D28D4FDF900BEB954 /* Colors.xcassets in Resources */,
 				ACC430FD28D3AFB400FBBDCD /* Assets.xcassets in Resources */,
 				ACC430F828D3AFB100FBBDCD /* Main.storyboard in Resources */,
 			);
@@ -338,9 +368,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC4313028D3C05C00FBBDCD /* TextFieldView.swift in Sources */,
+				ACE8307728D5237F00E18B2A /* PositionViewController.swift in Sources */,
+				ACE8306B28D500C700E18B2A /* Colors.swift in Sources */,
+				ACE8306E28D50A0E00E18B2A /* LoginCoordinator.swift in Sources */,
 				ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */,
 				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
+				ACE8307328D5138100E18B2A /* PositionView.swift in Sources */,
 				ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */,
+				ACE8307028D50A4800E18B2A /* Coordinator.swift in Sources */,
+				ACE8307528D51E6100E18B2A /* PositionViewCoordinator.swift in Sources */,
 				ACC4312C28D3BA0E00FBBDCD /* LoginView.swift in Sources */,
 				ACC4313428D3D37700FBBDCD /* LoginViewController.swift in Sources */,
 				ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */,

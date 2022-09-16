@@ -9,7 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let userLoginView = LoginView()
+    var loginView = LoginView()
+    var onTapLoginButton:(() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,7 @@ class LoginViewController: UIViewController {
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        view = userLoginView
+        view = loginView
 
     }
 }

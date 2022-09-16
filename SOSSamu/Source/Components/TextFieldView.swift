@@ -10,11 +10,12 @@ import UIKit
 class TextFieldView: UITextField {
     let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
-    init(font: UIFont?, placeholder: String, Keyboard: UIKeyboardType) {
+    init(font: UIFont?, placeholder: String, Keyboard: UIKeyboardType, borderStyle: BorderStyle) {
         super.init(frame: .zero)
         self.font = font
         self.placeholder = placeholder
         self.keyboardType = Keyboard
+        self.borderStyle = borderStyle
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     override open func textRect(forBounds bounds: CGRect) -> CGRect {

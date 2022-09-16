@@ -11,44 +11,42 @@ class LoginView: UIView {
 
     var  onTapLoginButton:(() -> Void)?
     
-    lazy var emailLabel: UILabel = {
-        let label = LabelView(text: "Digite seu email", textColor: .black, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
-        label.accessibilityLabel = "Digite seu email"
-        return label
-    }()
-    
+//    lazy var emailLabel: UILabel = {
+//        let label = LabelView(text: "Digite seu email", textColor: .textColor, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
+//        label.accessibilityLabel = "Digite seu email"
+//        return label
+//    }()
+//
     lazy var CRM_CORENLabel: UILabel = {
-        let label = LabelView(text: "Digite seu CRM ou COREN", textColor: .black, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
+        let label = LabelView(text: "Digite seu CRM ou COREN", textColor: .textColor, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
         label.accessibilityLabel = "Digite seu CRM ou COREN"
         return label
     }()
     
     lazy var senhaLabel: UILabel = {
-        let label = LabelView(text: "Digite sua senha", textColor: .black, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
+        let label = LabelView(text: "Digite sua senha", textColor: .textColor, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
         label.accessibilityLabel = "Digite sua senha"
         return label
     }()
     
     lazy var emailTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 17), placeholder: " exemplo@com", Keyboard: .emailAddress)
-        textField.borderStyle = .bezel
+        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 15), placeholder: " exemplo@com", Keyboard: .emailAddress, borderStyle: .roundedRect)
         return textField
     }()
     
     lazy var CRM_CORENTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 17), placeholder: " CRM / COREM", Keyboard: .emailAddress)
-        textField.borderStyle = .bezel
+        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 15), placeholder: " CRM/COREM", Keyboard: .emailAddress, borderStyle: .roundedRect)
         return textField
     }()
     
     lazy var senhaTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 17), placeholder: " letras e números", Keyboard: .emailAddress)
-        textField.borderStyle = .bezel
+        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 15), placeholder: " letras e números", Keyboard: .emailAddress, borderStyle: .roundedRect)
         return textField
     }()
     
     lazy var loginButton: UIButton = {
         let button = ButtonView(backgroundColor: .lightGray, titleColor: .black, text: "entrar", font: UIFont(name:"Helvica", size: 17.0), cRadius: 25, border: 0)
+        
         return button
     }()
     
@@ -57,8 +55,8 @@ class LoginView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
-        setupEmailLabel()
-        setupEmailTextField()
+       // setupEmailLabel()
+        //setupEmailTextField()
         setupCRM_CORENLabel()
         setupCRM_CORENTextField()
         setupSenhaLabel()
@@ -72,29 +70,29 @@ class LoginView: UIView {
     
     // MARK: Constraints
     
-    private func setupEmailLabel() {
-        addSubview(emailLabel)
-        
-        NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 180),
-            emailLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-            emailLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
-        ])
-    }
-    private func setupEmailTextField() {
-        addSubview(emailTextField)
-        NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 10),
-            emailTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-            emailTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
-        ])
-    }
+//    private func setupEmailLabel() {
+//        addSubview(emailLabel)
+//
+//        NSLayoutConstraint.activate([
+//            emailLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 180),
+//            emailLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
+//            emailLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
+//        ])
+//    }
+//    private func setupEmailTextField() {
+//        addSubview(emailTextField)
+//        NSLayoutConstraint.activate([
+//            emailTextField.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+//            emailTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
+//            emailTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
+//        ])
+//    }
     
     private func setupCRM_CORENLabel() {
         addSubview(CRM_CORENLabel)
         
         NSLayoutConstraint.activate([
-            CRM_CORENLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            CRM_CORENLabel.topAnchor.constraint(equalTo: topAnchor, constant: 200),
             CRM_CORENLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
             CRM_CORENLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
         ])
@@ -133,7 +131,10 @@ class LoginView: UIView {
             loginButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 45),
             loginButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
-            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30 )
+            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50 )
         ])
+    }
+    @objc func TapLoginButton(sender: UIButton) {
+        self.onTapLoginButton?()
     }
 }
