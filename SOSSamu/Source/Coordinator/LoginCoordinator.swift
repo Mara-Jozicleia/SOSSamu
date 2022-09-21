@@ -15,14 +15,11 @@ class LoginCoordinator: Coordinator {
     }
     func start() {
         let viewController = LoginViewController()
-        viewController.title = "Login"
-        
         viewController.onTapLoginButton = {
             self.showPositionList()
         }
         self.navigationController.pushViewController(viewController, animated: true)
     }
     private func showPositionList() {
-        let coordinator = P
     }
 }

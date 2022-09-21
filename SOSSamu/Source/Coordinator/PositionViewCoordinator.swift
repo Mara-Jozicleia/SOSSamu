@@ -16,16 +16,19 @@ class PositionViewCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = PositionView()
-        
+        let viewController = PositionViewController()
+        viewController.title = "Posição das ambulâncias"
+
         if #available(iOS 15.0, *) {
             viewController.sheetPresentationController?.detents = [.large()]
             
         } else {
-            viewController.modalPresentationSt
+//            viewController.modalPresentationStyle
             viewController.accessibilityViewIsModal = true
             navigationController.present(viewController, animated: true, completion: nil)
         }
+        self.navigationController.pushViewController(viewController, animated: true)
+
     }
 
 }

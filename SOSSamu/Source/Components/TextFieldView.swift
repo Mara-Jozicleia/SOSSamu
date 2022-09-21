@@ -8,7 +8,7 @@
 import UIKit
 
 class TextFieldView: UITextField {
-    let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    let padding = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0)
     
     init(font: UIFont?, placeholder: String, Keyboard: UIKeyboardType, borderStyle: BorderStyle) {
         super.init(frame: .zero)
@@ -17,6 +17,7 @@ class TextFieldView: UITextField {
         self.keyboardType = Keyboard
         self.borderStyle = borderStyle
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.delegate = self
     }
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
@@ -28,4 +29,11 @@ class TextFieldView: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+extension TextFieldView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+           return true
+       }
 }

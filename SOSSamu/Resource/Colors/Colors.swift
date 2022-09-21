@@ -10,8 +10,10 @@ import UIKit
 extension UIColor {
     static var cellColor =  UIColor(named:  "cellColor")
     static var titleButtonColor = UIColor(named: "titleButtonColor")
-    static var viewColor = UIColor(named: "viewColor")
+    static var buttonColor = UIColor(named: "buttonColor")
     static var textColor = UIColor(named: "textColor")
+    static var viewColor = UIColor(named: "viewColor")
+
     
 }
 extension CGColor {

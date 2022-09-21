@@ -172,7 +172,6 @@
 		ACC4312528D3B87000FBBDCD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				ACE8307128D5132900E18B2A /* Position */,
 				ACE8306C28D5098E00E18B2A /* Coordinator */,
 				ACC4312828D3B8C600FBBDCD /* View */,
 				ACC4312728D3B89100FBBDCD /* Components */,
@@ -193,6 +192,7 @@
 		ACC4312828D3B8C600FBBDCD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACE8307128D5132900E18B2A /* Position */,
 				ACC4312A28D3B92700FBBDCD /* UserLogin */,
 			);
 			path = View;

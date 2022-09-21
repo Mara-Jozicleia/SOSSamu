@@ -18,34 +18,35 @@ class LoginView: UIView {
 //    }()
 //
     lazy var CRM_CORENLabel: UILabel = {
-        let label = LabelView(text: "Digite seu CRM ou COREN", textColor: .textColor, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
+        let label = LabelView(text: "Digite seu CRM ou COREN", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
         label.accessibilityLabel = "Digite seu CRM ou COREN"
         return label
     }()
     
     lazy var senhaLabel: UILabel = {
-        let label = LabelView(text: "Digite sua senha", textColor: .textColor, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
+        let label = LabelView(text: "Digite sua senha", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
         label.accessibilityLabel = "Digite sua senha"
         return label
     }()
     
     lazy var emailTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 15), placeholder: " exemplo@com", Keyboard: .emailAddress, borderStyle: .roundedRect)
+        let textField = TextFieldView(font: UIFont(name: "Euphemia UCAS", size: 12), placeholder: " exemplo@com", Keyboard: .emailAddress, borderStyle: .roundedRect)
         return textField
     }()
     
     lazy var CRM_CORENTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 15), placeholder: " CRM/COREM", Keyboard: .emailAddress, borderStyle: .roundedRect)
+        let textField = TextFieldView(font: UIFont(name: "Euphemia UCAS", size: 12), placeholder: " CRM/COREM", Keyboard: .emailAddress, borderStyle: .roundedRect)
         return textField
     }()
     
     lazy var senhaTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Avenir Next", size: 15), placeholder: " letras e números", Keyboard: .emailAddress, borderStyle: .roundedRect)
+        let textField = TextFieldView(font: UIFont(name: "Euphemia UCAS", size: 12), placeholder: " letras e números", Keyboard: .emailAddress, borderStyle: .roundedRect)
+        textField.isSecureTextEntry = true
         return textField
     }()
     
     lazy var loginButton: UIButton = {
-        let button = ButtonView(backgroundColor: .lightGray, titleColor: .black, text: "entrar", font: UIFont(name:"Helvica", size: 17.0), cRadius: 25, border: 0)
+        let button = ButtonView(backgroundColor: .buttonColor, titleColor: .white, text: "entrar", font: UIFont(name:"Euphemia UCAS", size: 20.0), cRadius: 25, border: 0)
         
         return button
     }()
@@ -54,7 +55,7 @@ class LoginView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .white
+        backgroundColor = .viewColor
        // setupEmailLabel()
         //setupEmailTextField()
         setupCRM_CORENLabel()
@@ -131,7 +132,7 @@ class LoginView: UIView {
             loginButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 45),
             loginButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
-            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50 )
+            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100 )
         ])
     }
     @objc func TapLoginButton(sender: UIButton) {
