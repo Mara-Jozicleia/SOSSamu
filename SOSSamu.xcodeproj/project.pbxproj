@@ -28,6 +28,7 @@
 		ACE8307328D5138100E18B2A /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307228D5138100E18B2A /* PositionView.swift */; };
 		ACE8307528D51E6100E18B2A /* PositionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307428D51E6100E18B2A /* PositionViewCoordinator.swift */; };
 		ACE8307728D5237F00E18B2A /* PositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307628D5237F00E18B2A /* PositionViewController.swift */; };
+		ACE8EF2C28DE5BC100AEEBB8 /* ActionKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		ACE8307228D5138100E18B2A /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
 		ACE8307428D51E6100E18B2A /* PositionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewCoordinator.swift; sourceTree = "<group>"; };
 		ACE8307628D5237F00E18B2A /* PositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewController.swift; sourceTree = "<group>"; };
+		ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionKeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			children = (
 				ACE8307128D5132900E18B2A /* Position */,
 				ACC4312A28D3B92700FBBDCD /* UserLogin */,
+				ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				ACE8306E28D50A0E00E18B2A /* LoginCoordinator.swift in Sources */,
 				ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */,
 				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
+				ACE8EF2C28DE5BC100AEEBB8 /* ActionKeyboardView.swift in Sources */,
 				ACE8307328D5138100E18B2A /* PositionView.swift in Sources */,
 				ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */,
 				ACE8307028D50A4800E18B2A /* Coordinator.swift in Sources */,

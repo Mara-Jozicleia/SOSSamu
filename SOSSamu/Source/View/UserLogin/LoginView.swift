@@ -11,15 +11,9 @@ class LoginView: UIView {
 
     var  onTapLoginButton:(() -> Void)?
     
-//    lazy var emailLabel: UILabel = {
-//        let label = LabelView(text: "Digite seu email", textColor: .textColor, font: .systemFont(ofSize: 18, weight: .medium), nLines: .zero)
-//        label.accessibilityLabel = "Digite seu email"
-//        return label
-//    }()
-//
-    lazy var CRM_CORENLabel: UILabel = {
-        let label = LabelView(text: "Digite seu CRM ou COREN", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
-        label.accessibilityLabel = "Digite seu CRM ou COREN"
+    lazy var idUserLabel: UILabel = {
+        let label = LabelView(text: "Digite seu IDuser", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
+        label.accessibilityLabel = "Digite seu IDuser"
         return label
     }()
     
@@ -29,18 +23,13 @@ class LoginView: UIView {
         return label
     }()
     
-    lazy var emailTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Euphemia UCAS", size: 12), placeholder: " exemplo@com", Keyboard: .emailAddress, borderStyle: .roundedRect)
-        return textField
-    }()
-    
-    lazy var CRM_CORENTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Euphemia UCAS", size: 12), placeholder: " CRM/COREM", Keyboard: .emailAddress, borderStyle: .roundedRect)
+    lazy var idUserTextField: UITextField = {
+        let textField = TextFieldView(font: UIFont(name: "Arial", size: 14), placeholder: " O mesmo que você utiliza para logar no sistema", Keyboard: .numberPad, borderStyle: .roundedRect)
         return textField
     }()
     
     lazy var senhaTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Euphemia UCAS", size: 12), placeholder: " letras e números", Keyboard: .emailAddress, borderStyle: .roundedRect)
+        let textField = TextFieldView(font: UIFont(name: "Arial", size: 14), placeholder: "", Keyboard: .default, borderStyle: .roundedRect)
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -56,8 +45,6 @@ class LoginView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .viewColor
-       // setupEmailLabel()
-        //setupEmailTextField()
         setupCRM_CORENLabel()
         setupCRM_CORENTextField()
         setupSenhaLabel()
@@ -71,39 +58,21 @@ class LoginView: UIView {
     
     // MARK: Constraints
     
-//    private func setupEmailLabel() {
-//        addSubview(emailLabel)
-//
-//        NSLayoutConstraint.activate([
-//            emailLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 180),
-//            emailLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-//            emailLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
-//        ])
-//    }
-//    private func setupEmailTextField() {
-//        addSubview(emailTextField)
-//        NSLayoutConstraint.activate([
-//            emailTextField.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-//            emailTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-//            emailTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
-//        ])
-//    }
-    
     private func setupCRM_CORENLabel() {
-        addSubview(CRM_CORENLabel)
+        addSubview(idUserLabel)
         
         NSLayoutConstraint.activate([
-            CRM_CORENLabel.topAnchor.constraint(equalTo: topAnchor, constant: 200),
-            CRM_CORENLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-            CRM_CORENLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
+            idUserLabel.topAnchor.constraint(equalTo: topAnchor, constant: 200),
+            idUserLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
+            idUserLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
         ])
     }
     private func setupCRM_CORENTextField() {
-        addSubview(CRM_CORENTextField)
+        addSubview(idUserTextField)
         NSLayoutConstraint.activate([
-            CRM_CORENTextField.topAnchor.constraint(equalTo: CRM_CORENLabel.bottomAnchor, constant: 10),
-            CRM_CORENTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-            CRM_CORENTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
+            idUserTextField.topAnchor.constraint(equalTo: idUserLabel.bottomAnchor, constant: 10),
+            idUserTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
+            idUserTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
         ])
     }
     
@@ -111,7 +80,7 @@ class LoginView: UIView {
         addSubview(senhaLabel)
         
         NSLayoutConstraint.activate([
-            senhaLabel.topAnchor.constraint(equalTo: CRM_CORENTextField.bottomAnchor, constant: 20),
+            senhaLabel.topAnchor.constraint(equalTo: idUserTextField.bottomAnchor, constant: 20),
             senhaLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
             senhaLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
         ])
@@ -128,11 +97,12 @@ class LoginView: UIView {
     
     private func setupLoginButton() {
         addSubview(loginButton)
+        
         NSLayoutConstraint.activate([
             loginButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 45),
             loginButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
-            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100 )
+            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -22 )
         ])
     }
     @objc func TapLoginButton(sender: UIButton) {
