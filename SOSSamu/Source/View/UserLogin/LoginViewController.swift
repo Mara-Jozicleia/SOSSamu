@@ -15,7 +15,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginView.loginButton.bindToKeyboard()
+        
+        view = loginView
+        loginView.onTapLoginButton = {
+            self.onTapLoginButton?()
+        }
     }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         view = loginView

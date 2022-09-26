@@ -98,6 +98,8 @@ class LoginView: UIView {
     private func setupLoginButton() {
         addSubview(loginButton)
         
+        loginButton.addTarget(self, action: #selector(TapLoginButton), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             loginButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 45),
             loginButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45),
@@ -105,6 +107,7 @@ class LoginView: UIView {
             loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -22 )
         ])
     }
+    
     @objc func TapLoginButton(sender: UIButton) {
         self.onTapLoginButton?()
     }

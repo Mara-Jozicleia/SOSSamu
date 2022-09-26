@@ -13,13 +13,20 @@ class LoginCoordinator: Coordinator {
     init(navigationController: UINavigationController){
         self.navigationController = navigationController
     }
+    
     func start() {
+        
         let viewController = LoginViewController()
         viewController.onTapLoginButton = {
-            self.showPositionList()
+            self.showDetailCallView()
         }
+        
         self.navigationController.pushViewController(viewController, animated: true)
     }
-    private func showPositionList() {
+    
+    private func showDetailCallView() {
+        
+        let coordinator = DetailCallViewCoordinator(navigationController: self.navigationController)
+        coordinator.start()
     }
 }
