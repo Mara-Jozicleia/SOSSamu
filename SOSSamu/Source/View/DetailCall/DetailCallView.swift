@@ -10,8 +10,15 @@ import UIKit
 class DetailCallView: UIView {
     
     lazy var descriptionLabel: UILabel = {
-        let label = LabelView(text: "Descrição", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 20), nLines: .zero)
+        let label = LabelView(text: "Descrição do Paciente", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 20), nLines: .zero)
         label.accessibilityLabel = "Descrição"
+        return label
+    }()
+    
+    lazy var descriptionPatientLabel: UILabel = {
+        let view = UILabel()
+        let label = LabelView(text: "Acidente de carro, envolvendo 3 vitimas, 1 inconsciente, 2 conscientes sem mobilidade, com sangramento", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 18), nLines: .zero)
+        label.accessibilityLabel = "Localização"
         return label
     }()
     
@@ -33,14 +40,7 @@ class DetailCallView: UIView {
         return label
     }()
     
-    lazy var descriptionView: UITextView = {
-        let view = UITextView()
-        view.layer.borderColor = .borderColor
-        view.layer.borderWidth = 1.5
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+
     
     lazy var firstCardView: UIView = {
         let view = UIView()
@@ -82,13 +82,13 @@ class DetailCallView: UIView {
     }
     
     private func setupDescriptionView() {
-        addSubview(descriptionView)
+        addSubview(descriptionPatientLabel)
         
         NSLayoutConstraint.activate([
-            descriptionView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
-            descriptionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.88),
-            descriptionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.15),
-            descriptionView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            descriptionPatientLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            descriptionPatientLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant:  -20),
+            descriptionPatientLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            descriptionPatientLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             ])
     }
     
@@ -96,7 +96,7 @@ class DetailCallView: UIView {
         addSubview(localizationTitleLabel)
         
         NSLayoutConstraint.activate([
-            localizationTitleLabel.topAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: 50),
+            localizationTitleLabel.topAnchor.constraint(equalTo: descriptionPatientLabel.bottomAnchor, constant: 50),
             localizationTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             localizationTitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22),
             ])
@@ -108,7 +108,7 @@ class DetailCallView: UIView {
         NSLayoutConstraint.activate([
             firstCardView.topAnchor.constraint(equalTo: localizationTitleLabel.bottomAnchor, constant: 20),
             firstCardView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.88),
-            firstCardView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.35),
+            firstCardView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.15),
             firstCardView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             ])
     }

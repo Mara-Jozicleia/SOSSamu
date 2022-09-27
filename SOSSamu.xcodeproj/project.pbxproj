@@ -191,7 +191,8 @@
 		ACC4312828D3B8C600FBBDCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ACE8307128D5132900E18B2A /* InfoJob */,
+				ACFAB82128E274FA00893692 /* InfoJob */,
+				ACE8307128D5132900E18B2A /* DetailCall */,
 				ACC4312A28D3B92700FBBDCD /* UserLogin */,
 				ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */,
 			);
@@ -226,11 +227,18 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		ACE8307128D5132900E18B2A /* InfoJob */ = {
+		ACE8307128D5132900E18B2A /* DetailCall */ = {
 			isa = PBXGroup;
 			children = (
 				ACE8307228D5138100E18B2A /* DetailCallView.swift */,
 				ACE8307628D5237F00E18B2A /* DetailCallViewController.swift */,
+			);
+			path = DetailCall;
+			sourceTree = "<group>";
+		};
+		ACFAB82128E274FA00893692 /* InfoJob */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = InfoJob;
 			sourceTree = "<group>";
