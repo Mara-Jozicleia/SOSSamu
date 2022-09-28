@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC33A88828E4EEAD00AC2E3A /* InfoJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88728E4EEAD00AC2E3A /* InfoJobView.swift */; };
+		AC33A88B28E4EEF300AC2E3A /* InfoJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */; };
+		AC33A88D28E4EF1A00AC2E3A /* InfoJobCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */; };
 		ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */; };
 		ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */; };
 		ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F928D3AFB100FBBDCD /* SOSSamu.xcdatamodeld */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC33A88728E4EEAD00AC2E3A /* InfoJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoJobView.swift; path = SOSSamu/Source/View/InfoJob/InfoJobView.swift; sourceTree = SOURCE_ROOT; };
+		AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoJobViewController.swift; sourceTree = "<group>"; };
+		AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoJobCoordinator.swift; sourceTree = "<group>"; };
 		ACC430ED28D3AFB100FBBDCD /* SOSSamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOSSamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC33A88928E4EEBC00AC2E3A /* InfoJob */ = {
+			isa = PBXGroup;
+			children = (
+				AC33A88728E4EEAD00AC2E3A /* InfoJobView.swift */,
+				AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */,
+			);
+			path = InfoJob;
+			sourceTree = "<group>";
+		};
 		ACC430E428D3AFB100FBBDCD = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +206,7 @@
 		ACC4312828D3B8C600FBBDCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ACFAB82128E274FA00893692 /* InfoJob */,
+				AC33A88928E4EEBC00AC2E3A /* InfoJob */,
 				ACE8307128D5132900E18B2A /* DetailCall */,
 				ACC4312A28D3B92700FBBDCD /* UserLogin */,
 				ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */,
@@ -223,6 +238,7 @@
 				ACE8306D28D50A0E00E18B2A /* LoginCoordinator.swift */,
 				ACE8306F28D50A4800E18B2A /* Coordinator.swift */,
 				ACE8307428D51E6100E18B2A /* DetailCallViewCoordinator.swift */,
+				AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -234,13 +250,6 @@
 				ACE8307628D5237F00E18B2A /* DetailCallViewController.swift */,
 			);
 			path = DetailCall;
-			sourceTree = "<group>";
-		};
-		ACFAB82128E274FA00893692 /* InfoJob */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InfoJob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +386,7 @@
 				ACC4313028D3C05C00FBBDCD /* TextFieldView.swift in Sources */,
 				ACE8307728D5237F00E18B2A /* DetailCallViewController.swift in Sources */,
 				ACE8306B28D500C700E18B2A /* Colors.swift in Sources */,
+				AC33A88B28E4EEF300AC2E3A /* InfoJobViewController.swift in Sources */,
 				ACE8306E28D50A0E00E18B2A /* LoginCoordinator.swift in Sources */,
 				ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */,
 				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
@@ -387,7 +397,9 @@
 				ACE8307528D51E6100E18B2A /* DetailCallViewCoordinator.swift in Sources */,
 				ACC4312C28D3BA0E00FBBDCD /* LoginView.swift in Sources */,
 				ACC4313428D3D37700FBBDCD /* LoginViewController.swift in Sources */,
+				AC33A88D28E4EF1A00AC2E3A /* InfoJobCoordinator.swift in Sources */,
 				ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */,
+				AC33A88828E4EEAD00AC2E3A /* InfoJobView.swift in Sources */,
 				ACC4312E28D3BD0F00FBBDCD /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

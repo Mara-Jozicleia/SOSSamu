@@ -5,6 +5,7 @@
 //  Created by Usuário Convidado on 16/09/22.
 //
 
+import Foundation
 import UIKit
 
 class LoginCoordinator: Coordinator {

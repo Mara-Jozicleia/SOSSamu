@@ -53,7 +53,7 @@ class DetailCallView: UIView {
     }()
     
     lazy var loginButton: UIButton = {
-        let button = ButtonView(backgroundColor: .buttonColor, titleColor: .white, text: "entrar", font: UIFont(name:"Euphemia UCAS", size: 20.0), cRadius: 25, border: 0)
+        let button = ButtonView(backgroundColor: .buttonColor, titleColor: .white, text: "Iniciar chamado", font: UIFont(name:"Euphemia UCAS", size: 20.0), cRadius: 25, border: 0)
         
         return button
     }()
