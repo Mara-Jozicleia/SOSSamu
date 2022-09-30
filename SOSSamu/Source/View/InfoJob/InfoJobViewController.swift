@@ -9,9 +9,12 @@ import UIKit
 
 class InfoJobViewController: UIViewController {
 
+    var infoJobView = InfoJobView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view = infoJobView
+
 
     }
-    
 }

@@ -12,19 +12,21 @@ class LoginView: UIView {
     var  onTapLoginButton:(() -> Void)?
     
     lazy var idUserLabel: UILabel = {
-        let label = LabelView(text: "Digite seu IDuser", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
+        let label = LabelView(text: "Digite seu IDuser", textColor: .textColor, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.accessibilityLabel = "Digite seu IDuser"
         return label
     }()
     
     lazy var senhaLabel: UILabel = {
-        let label = LabelView(text: "Digite sua senha", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
+        let label = LabelView(text: "Digite sua senha", textColor: .textColor, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.accessibilityLabel = "Digite sua senha"
         return label
     }()
     
     lazy var idUserTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Arial", size: 14), placeholder: " O mesmo que você utiliza para logar no sistema", Keyboard: .numberPad, borderStyle: .roundedRect)
+        let textField = TextFieldView(font: UIFont(name: "Arial", size: 14), placeholder: " O mesmo que você utiliza para logar no sistema", Keyboard: .default, borderStyle: .roundedRect)
         return textField
     }()
     

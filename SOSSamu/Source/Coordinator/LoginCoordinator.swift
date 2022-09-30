@@ -27,7 +27,7 @@ class LoginCoordinator: Coordinator {
     
     private func showDetailCallView() {
         
-        let coordinator = DetailCallViewCoordinator(navigationController: self.navigationController)
+        let coordinator = InfoJobCoordinator(navigationController: self.navigationController)
         coordinator.start()
     }
 }

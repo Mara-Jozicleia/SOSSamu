@@ -10,20 +10,27 @@ import UIKit
 class DetailCallView: UIView {
     
     lazy var descriptionLabel: UILabel = {
-        let label = LabelView(text: "Descrição do Paciente", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 20), nLines: .zero)
-        label.accessibilityLabel = "Descrição"
+        let label = LabelView(text: "Descrição do Paciente", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        label.accessibilityLabel = "Descrição do Paciente"
+        
+        for name in UIFont.familyNames {
+            print(name)
+        }
         return label
     }()
     
     lazy var descriptionPatientLabel: UILabel = {
         let view = UILabel()
-        let label = LabelView(text: "Acidente de carro, envolvendo 3 vitimas, 1 inconsciente, 2 conscientes sem mobilidade, com sangramento", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 18), nLines: .zero)
+        let label = LabelView(text: "Acidente de carro, envolvendo 3 vitimas, 1 inconsciente com sangramento na região da cabeça, 2 conscientes", textColor: .black, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
         label.accessibilityLabel = "Localização"
         return label
     }()
     
     lazy var localizationTitleLabel: UILabel = {
-        let label = LabelView(text: "Localização", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 20), nLines: .zero)
+        let label = LabelView(text: "Localização", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.accessibilityLabel = "Localização"
         return label
     }()
@@ -35,7 +42,7 @@ class DetailCallView: UIView {
     }()
     
     lazy var localiHospitalLabel: UILabel = {
-        let label = LabelView(text: "Localização", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
+        let label = LabelView(text: "Hospital", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
         label.accessibilityLabel = "Localização"
         return label
     }()
@@ -85,7 +92,7 @@ class DetailCallView: UIView {
         addSubview(descriptionPatientLabel)
         
         NSLayoutConstraint.activate([
-            descriptionPatientLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            descriptionPatientLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
             descriptionPatientLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant:  -20),
             descriptionPatientLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
             descriptionPatientLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
@@ -96,7 +103,7 @@ class DetailCallView: UIView {
         addSubview(localizationTitleLabel)
         
         NSLayoutConstraint.activate([
-            localizationTitleLabel.topAnchor.constraint(equalTo: descriptionPatientLabel.bottomAnchor, constant: 50),
+            localizationTitleLabel.topAnchor.constraint(equalTo: descriptionPatientLabel.bottomAnchor, constant: 80),
             localizationTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             localizationTitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22),
             ])

@@ -9,9 +9,21 @@ import Foundation
 import UIKit
 
 class InfoJobCoordinator: Coordinator {
-    func start() {
+        
+    var navigationController = UINavigationController()
+    
+    init(navigationController: UINavigationController) {
+        
+        self.navigationController = navigationController
         
     }
     
+    func start() {
+        
+        let viewController = InfoJobViewController()
+        
+        self.navigationController.pushViewController(viewController, animated: true)
+            
+    }
 
 }
