@@ -12,14 +12,14 @@ class LoginView: UIView {
     var  onTapLoginButton:(() -> Void)?
     
     lazy var idUserLabel: UILabel = {
-        let label = LabelView(text: "Digite seu IDuser", textColor: .textColor, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
+        let label = LabelView(text: "Digite seu IDuser", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.accessibilityLabel = "Digite seu IDuser"
         return label
     }()
     
     lazy var senhaLabel: UILabel = {
-        let label = LabelView(text: "Digite sua senha", textColor: .textColor, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
+        let label = LabelView(text: "Digite sua senha", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.accessibilityLabel = "Digite sua senha"
         return label
@@ -37,8 +37,7 @@ class LoginView: UIView {
     }()
     
     lazy var loginButton: UIButton = {
-        let button = ButtonView(backgroundColor: .buttonColor, titleColor: .white, text: "entrar", font: UIFont(name:"Euphemia UCAS", size: 20.0), cRadius: 25, border: 0)
-        
+        let button = ButtonView(backgroundColor: .orange, titleColor: .white, text: "entrar", font: UIFont(name:"Agenda", size: 25.0), cRadius: 25, border: 0)
         return button
     }()
     
@@ -46,7 +45,7 @@ class LoginView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .viewColor
+        backgroundColor = .white
         setupCRM_CORENLabel()
         setupCRM_CORENTextField()
         setupSenhaLabel()

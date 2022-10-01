@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0DA93328E79CBC002A1E15 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0DA93228E79CBC002A1E15 /* SwitchButton.swift */; };
 		AC33A88828E4EEAD00AC2E3A /* InfoJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88728E4EEAD00AC2E3A /* InfoJobView.swift */; };
 		AC33A88B28E4EEF300AC2E3A /* InfoJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */; };
 		AC33A88D28E4EF1A00AC2E3A /* InfoJobCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC0DA93228E79CBC002A1E15 /* SwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
 		AC33A88728E4EEAD00AC2E3A /* InfoJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoJobView.swift; path = SOSSamu/Source/View/InfoJob/InfoJobView.swift; sourceTree = SOURCE_ROOT; };
 		AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoJobViewController.swift; sourceTree = "<group>"; };
 		AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoJobCoordinator.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				ACC4312D28D3BD0F00FBBDCD /* LabelView.swift */,
 				ACC4312F28D3C05C00FBBDCD /* TextFieldView.swift */,
 				ACC4313128D3C44000FBBDCD /* ButtonView.swift */,
+				AC0DA93228E79CBC002A1E15 /* SwitchButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				AC33A88B28E4EEF300AC2E3A /* InfoJobViewController.swift in Sources */,
 				ACE8306E28D50A0E00E18B2A /* LoginCoordinator.swift in Sources */,
 				ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */,
+				AC0DA93328E79CBC002A1E15 /* SwitchButton.swift in Sources */,
 				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
 				ACE8EF2C28DE5BC100AEEBB8 /* ActionKeyboardView.swift in Sources */,
 				ACE8307328D5138100E18B2A /* DetailCallView.swift in Sources */,
