@@ -9,14 +9,24 @@ import UIKit
 
 class DetailCallView: UIView {
     
+    lazy var headerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .viewO
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var chamadoLabel: UILabel = {
+        let label = LabelView(text: "Chamado #234", textColor: .white, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.accessibilityLabel = "Chamado #234"
+        return label
+    }()
+    
     lazy var descriptionLabel: UILabel = {
         let label = LabelView(text: "Descrição do Paciente", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.accessibilityLabel = "Descrição do Paciente"
-        
-        for name in UIFont.familyNames {
-            print(name)
-        }
         return label
     }()
     
@@ -47,9 +57,9 @@ class DetailCallView: UIView {
         return label
     }()
     
-
     
-    lazy var firstCardView: UIView = {
+    
+    lazy var descriptionView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         view.layer.borderColor = .borderColor
@@ -58,7 +68,7 @@ class DetailCallView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     lazy var loginButton: UIButton = {
         let button = ButtonView(backgroundColor: .buttonColor, titleColor: .white, text: "Iniciar chamado", font: UIFont(name:"Euphemia UCAS", size: 20.0), cRadius: 25, border: 0)
         
@@ -68,35 +78,60 @@ class DetailCallView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .viewColor
-        setupDescriptionLabel()
+        setupHeaderView()
+        setupChamadoLabel()
         setupDescriptionView()
+        setupDescriptionPatientLabel()
         setupLocalizationTitleLabel()
-        setupFirstCardView()
+        setupHeaderView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupDescriptionLabel() {
-        addSubview(descriptionLabel)
+    private func setupHeaderView() {
+        addSubview(headerView)
         
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 150),
-            descriptionLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-            descriptionLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22),
-            ])
+            headerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            headerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
+            headerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+            headerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.18),
+            
+        ])
+    }
+    
+    private func setupChamadoLabel() {
+        headerView.addSubview(chamadoLabel)
+        
+        NSLayoutConstraint.activate([
+            chamadoLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+            chamadoLabel.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -8),
+            chamadoLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 8),
+        ])
     }
     
     private func setupDescriptionView() {
-        addSubview(descriptionPatientLabel)
+        addSubview(descriptionView)
         
         NSLayoutConstraint.activate([
-            descriptionPatientLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
-            descriptionPatientLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant:  -20),
-            descriptionPatientLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            descriptionPatientLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-            ])
+            descriptionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
+            descriptionView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            descriptionView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            descriptionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.18),
+            
+        ])
+    }
+    
+    private func setupDescriptionPatientLabel() {
+        descriptionView.addSubview(descriptionPatientLabel)
+        
+        NSLayoutConstraint.activate([
+            descriptionPatientLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 10),
+            descriptionPatientLabel.rightAnchor.constraint(equalTo: descriptionView.rightAnchor, constant:  -10),
+            descriptionPatientLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10),
+        ])
     }
     
     private func setupLocalizationTitleLabel() {
@@ -106,17 +141,7 @@ class DetailCallView: UIView {
             localizationTitleLabel.topAnchor.constraint(equalTo: descriptionPatientLabel.bottomAnchor, constant: 80),
             localizationTitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             localizationTitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22),
-            ])
+        ])
     }
     
-    private func setupFirstCardView() {
-        addSubview(firstCardView)
-        
-        NSLayoutConstraint.activate([
-            firstCardView.topAnchor.constraint(equalTo: localizationTitleLabel.bottomAnchor, constant: 20),
-            firstCardView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.88),
-            firstCardView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.15),
-            firstCardView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-            ])
-    }
 }

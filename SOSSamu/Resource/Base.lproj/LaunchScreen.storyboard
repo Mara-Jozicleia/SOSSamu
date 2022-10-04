@@ -19,18 +19,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YV3-4u-dCE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="I8n-aQ-CNg">
-                                        <rect key="frame" x="87.666666666666686" y="365.66666666666669" width="200" height="81"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="81" id="BtU-va-D2U"/>
-                                            <constraint firstAttribute="width" constant="200" id="gVB-Nd-Px1"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="life" translatesAutoresizingMaskIntoConstraints="NO" id="I8n-aQ-CNg">
+                                        <rect key="frame" x="88" y="309" width="199" height="194"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91283077000000001" green="0.35083031650000002" blue="0.13842034340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="I8n-aQ-CNg" firstAttribute="centerX" secondItem="YV3-4u-dCE" secondAttribute="centerX" id="Dge-6A-DPt"/>
-                                    <constraint firstItem="I8n-aQ-CNg" firstAttribute="centerY" secondItem="YV3-4u-dCE" secondAttribute="centerY" id="OWN-bY-cmH"/>
+                                    <constraint firstItem="I8n-aQ-CNg" firstAttribute="leading" secondItem="YV3-4u-dCE" secondAttribute="leading" constant="88" id="Fh3-C1-5dg"/>
+                                    <constraint firstAttribute="bottom" secondItem="I8n-aQ-CNg" secondAttribute="bottom" constant="309" id="Ifb-wA-kTN"/>
+                                    <constraint firstItem="I8n-aQ-CNg" firstAttribute="top" secondItem="YV3-4u-dCE" secondAttribute="top" constant="309" id="VRW-iB-jcG"/>
+                                    <constraint firstAttribute="trailing" secondItem="I8n-aQ-CNg" secondAttribute="trailing" constant="88" id="uM7-uQ-FP2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -46,11 +44,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="-304"/>
+            <point key="canvasLocation" x="437.60000000000002" y="-304.43349753694582"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="290" height="167"/>
+        <image name="life" width="432" height="379"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

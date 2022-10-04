@@ -1,14 +1,14 @@
 //
-//  LoginCoordinator.swift
+//  MapViewCoordinator.swift
 //  SOSSamu
 //
-//  Created by Usuário Convidado on 16/09/22.
+//  Created by Usuário Convidado on 03/10/22.
 //
 
-import Foundation
 import UIKit
 
-class LoginCoordinator: Coordinator {
+class MapViewCoordinator: Coordinator {
+
     var navigationController = UINavigationController()
     
     init(navigationController: UINavigationController){
@@ -17,15 +17,15 @@ class LoginCoordinator: Coordinator {
     
     func start() {
         
-        let viewController = LoginViewController()
-        viewController.onTapLoginButton = {
-            self.showInfoJobView()
+        let viewController = MapViewController()
+        viewController.onCallButton = {
+            self.returnInfoJobView()
         }
         
         self.navigationController.pushViewController(viewController, animated: true)
     }
     
-    private func showInfoJobView() {
+    private func returnInfoJobView() {
         
         let coordinator = InfoJobCoordinator(navigationController: self.navigationController)
         coordinator.start()

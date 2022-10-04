@@ -9,18 +9,20 @@ import UIKit
 
 class InfoJobView: UIView {
     
-    var alertImage: UIImageView = {
+    var onTapAlertButton:(() -> Void)?
+
+    var menuIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "alerta")
-        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "menu")
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     lazy var welcomeUsersLabel: UILabel = {
         
-        let label = LabelView(text: "Olá", textColor: .textColor, font: UIFont(name: "Agenda", size: 22), nLines: .zero)
-        label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
+        let label = LabelView(text: "Olá", textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         label.accessibilityLabel = "Olá"
         return label
     }()
@@ -51,6 +53,13 @@ class InfoJobView: UIView {
         return button
     }()
     
+    lazy var headerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .viewO
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var container: UIView = {
         let view = UIView()
         view.layer.borderColor = .borderColor
@@ -61,54 +70,88 @@ class InfoJobView: UIView {
         return view
     }()
     
-    lazy var footerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .orange
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     lazy var availableStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [userAvailableLabel, availableButton])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .fill
-       // stack.spacing = 5
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         return stack
     }()
     
+    lazy var footerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .viewO
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    lazy var alertButton: UIButton = {
+        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "Entrar", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        button.setImage(UIImage(named: "alert"), for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        return button
+    }()
+    
+
     init() {
         super.init(frame: .zero)
         backgroundColor = .viewColor
+        setupHeaderView()
         setupWelcomeUsersLabel()
+        setupMenuIcon()
         setupContainer()
         setupJobLocationLabel()
         setupBaseLocationLabel()
         setupAvailableStackView()
         setupFooterView()
+        setupAlertImage()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupWelcomeUsersLabel() {
-        addSubview(welcomeUsersLabel)
+    private func setupHeaderView() {
+        addSubview(headerView)
         
         NSLayoutConstraint.activate([
-            welcomeUsersLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
-            welcomeUsersLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-            welcomeUsersLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22),
+            headerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            headerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
+            headerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+            headerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.18),
+
         ])
+    }
+    
+    private func setupWelcomeUsersLabel() {
+        headerView.addSubview(welcomeUsersLabel)
+        
+        NSLayoutConstraint.activate([
+            welcomeUsersLabel.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -20),
+            welcomeUsersLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 22),
+            welcomeUsersLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10)
+        ])
+    }
+    private func setupMenuIcon() {
+        headerView.addSubview(menuIcon)
+        
+        let kheight: CGFloat = 35
+        let kwidth: CGFloat = 35
+        
+        NSLayoutConstraint.activate([
+            menuIcon.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+            menuIcon.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -10),
+            menuIcon.heightAnchor.constraint(equalToConstant: kheight),
+            menuIcon.widthAnchor.constraint(equalToConstant: kwidth)
+            ])
     }
     
     private func setupContainer() {
         addSubview(container)
         
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: welcomeUsersLabel.bottomAnchor, constant: 50),
+            container.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 80),
             container.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.88),
             container.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25),
             container.centerXAnchor.constraint(equalTo: self.centerXAnchor)
@@ -132,7 +175,6 @@ class InfoJobView: UIView {
             baseLocationLabel.topAnchor.constraint(equalTo: jobLocationLabel.bottomAnchor, constant: 20),
             baseLocationLabel.rightAnchor.constraint(equalTo: container.rightAnchor, constant:  -10),
             baseLocationLabel.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 10),
-           // baseLocationLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -6)
         ])
     }
     
@@ -140,10 +182,9 @@ class InfoJobView: UIView {
         addSubview(availableStackView)
         
         NSLayoutConstraint.activate([
-            userAvailableLabel.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 30),
+            userAvailableLabel.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 50),
             availableStackView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             availableStackView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 32),
-            //availableStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50)
         ])
     }
     
@@ -154,10 +195,29 @@ class InfoJobView: UIView {
             footerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
             footerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
             footerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
-            footerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.15),
+            footerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.08),
 
-            //availableStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50)
         ])
+    }
+    
+    private func setupAlertImage() {
+        footerView.addSubview(alertButton)
+        let kheight: CGFloat = 50
+        let kwidth: CGFloat = 50
+        
+        alertButton.addTarget(self, action: #selector(onAlertButton), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            alertButton.bottomAnchor.constraint(equalTo: footerView.bottomAnchor, constant: -8),
+            alertButton.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
+            alertButton.heightAnchor.constraint(equalToConstant: kheight),
+            alertButton.widthAnchor.constraint(equalToConstant: kwidth)
+        ])
+    }
+    
+    
+    @objc func onAlertButton(sender: UIButton) {
+        self.onTapAlertButton?()
     }
     
     @objc func selectAvailable() {
@@ -166,14 +226,3 @@ class InfoJobView: UIView {
         }
     }
 }
-
-//    private func setupFirstCardView() {
-//        addSubview(firstCardView)
-//        
-//        NSLayoutConstraint.activate([
-//            firstCardView.topAnchor.constraint(equalTo: localizationTitleLabel.bottomAnchor, constant: 20),
-//            firstCardView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.88),
-//            firstCardView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.15),
-//            firstCardView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-//        ])
-//    }

@@ -17,7 +17,7 @@ final class SwitchButton: UISwitch {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.onTintColor = .green
+        self.onTintColor = .switchBColor
         self.tintColor = .red
     }
     

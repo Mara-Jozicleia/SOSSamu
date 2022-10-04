@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class InfoJobCoordinator: Coordinator {
-        
+    
     var navigationController = UINavigationController()
     
     init(navigationController: UINavigationController) {
@@ -21,9 +21,18 @@ class InfoJobCoordinator: Coordinator {
     func start() {
         
         let viewController = InfoJobViewController()
+        viewController.onTapAlertButton = {
+            
+            self.showDetailCallView()
+        }
         
         self.navigationController.pushViewController(viewController, animated: true)
-            
     }
-
+    
+    private func showDetailCallView() {
+        
+        let coordinator = DetailCallViewCoordinator(navigationController: self.navigationController)
+        coordinator.start()
+    }
+    
 }

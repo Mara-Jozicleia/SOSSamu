@@ -26,7 +26,7 @@ class LoginView: UIView {
     }()
     
     lazy var idUserTextField: UITextField = {
-        let textField = TextFieldView(font: UIFont(name: "Arial", size: 14), placeholder: " O mesmo que você utiliza para logar no sistema", Keyboard: .default, borderStyle: .roundedRect)
+        let textField = TextFieldView(font: UIFont(name: "Arial", size: 14), placeholder: " O mesmo que você utiliza para logar no sistema", Keyboard: .numbersAndPunctuation, borderStyle: .roundedRect)
         return textField
     }()
     
@@ -37,7 +37,8 @@ class LoginView: UIView {
     }()
     
     lazy var loginButton: UIButton = {
-        let button = ButtonView(backgroundColor: .orange, titleColor: .white, text: "entrar", font: UIFont(name:"Agenda", size: 25.0), cRadius: 25, border: 0)
+        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "Entrar", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
     
@@ -46,8 +47,8 @@ class LoginView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
-        setupCRM_CORENLabel()
-        setupCRM_CORENTextField()
+        setupIdUserLabel()
+        setupIdUserTextField()
         setupSenhaLabel()
         setupSenhaTextField()
         setupLoginButton()
@@ -59,7 +60,7 @@ class LoginView: UIView {
     
     // MARK: Constraints
     
-    private func setupCRM_CORENLabel() {
+    private func setupIdUserLabel() {
         addSubview(idUserLabel)
         
         NSLayoutConstraint.activate([
@@ -68,7 +69,7 @@ class LoginView: UIView {
             idUserLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
         ])
     }
-    private func setupCRM_CORENTextField() {
+    private func setupIdUserTextField() {
         addSubview(idUserTextField)
         NSLayoutConstraint.activate([
             idUserTextField.topAnchor.constraint(equalTo: idUserLabel.bottomAnchor, constant: 10),
@@ -105,7 +106,7 @@ class LoginView: UIView {
             loginButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 45),
             loginButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
-            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -22 )
+            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -25 )
         ])
     }
     
