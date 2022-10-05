@@ -23,7 +23,7 @@
                                         <rect key="frame" x="88" y="309" width="199" height="194"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.98712104560000002" green="1" blue="0.98185199499999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="I8n-aQ-CNg" firstAttribute="leading" secondItem="YV3-4u-dCE" secondAttribute="leading" constant="88" id="Fh3-C1-5dg"/>
                                     <constraint firstAttribute="bottom" secondItem="I8n-aQ-CNg" secondAttribute="bottom" constant="309" id="Ifb-wA-kTN"/>
@@ -44,11 +44,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437.60000000000002" y="-304.43349753694582"/>
+            <point key="canvasLocation" x="-2" y="-319"/>
         </scene>
     </scenes>
     <resources>
-        <image name="life" width="432" height="379"/>
+        <image name="life" width="144" height="126.33333587646484"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

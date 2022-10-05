@@ -19,31 +19,49 @@ class InfoJobView: UIView {
         return imageView
     }()
     
+    var ambulanciaImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ambulancia")
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     lazy var welcomeUsersLabel: UILabel = {
         
         let label = LabelView(text: "Olá", textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: .zero)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-        label.accessibilityLabel = "Olá"
+        label.accessibilityLabel = label.text
         return label
     }()
     
     lazy var jobLocationLabel: UILabel = {
         let label = LabelView(text: "Local de trabalho:", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        label.accessibilityLabel = "Local de trabalho"
+        label.accessibilityLabel = label.text
         return label
     }()
     
     lazy var baseLocationLabel: UILabel = {
-        let label = LabelView(text: "Base Ipiranga", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
-        label.accessibilityLabel = "Base Ipiranga"
+        let label = LabelView(text: "Base Ipiranga", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        label.accessibilityLabel = label.text
+        return label
+    }()
+    
+    lazy var baseAdressLabel: UILabel = {
+        let label = LabelView(text: "Rua Euclides Pacheco, 122 - Mooca SP ", textColor: .textColor, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.accessibilityLabel = label.text
         return label
     }()
     
     lazy var userAvailableLabel: UILabel = {
         let label = LabelView(text: "Está disponível?", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-        label.accessibilityLabel = "Está disponível?"
+        label.accessibilityLabel = label.text
         return label
     }()
     
@@ -80,6 +98,16 @@ class InfoJobView: UIView {
         return stack
     }()
     
+    lazy var locationStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [ambulanciaImage, baseLocationLabel])
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.spacing = 15
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stack
+    }()
+    
     lazy var footerView: UIView = {
         let view = UIView()
         view.backgroundColor = .viewO
@@ -102,7 +130,8 @@ class InfoJobView: UIView {
         setupMenuIcon()
         setupContainer()
         setupJobLocationLabel()
-        setupBaseLocationLabel()
+        setupLocationStackView()
+        setupBaseAdressLabel()
         setupAvailableStackView()
         setupFooterView()
         setupAlertImage()
@@ -153,7 +182,7 @@ class InfoJobView: UIView {
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 80),
             container.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.88),
-            container.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25),
+            container.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.20),
             container.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
@@ -168,13 +197,28 @@ class InfoJobView: UIView {
         ])
     }
     
-    private func setupBaseLocationLabel() {
-        container.addSubview(baseLocationLabel)
+    private func setupLocationStackView() {
+        container.addSubview(locationStackView)
+        
+        let kheight: CGFloat = 60
+        let kwidth: CGFloat = 60
         
         NSLayoutConstraint.activate([
-            baseLocationLabel.topAnchor.constraint(equalTo: jobLocationLabel.bottomAnchor, constant: 20),
-            baseLocationLabel.rightAnchor.constraint(equalTo: container.rightAnchor, constant:  -10),
-            baseLocationLabel.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 10),
+            locationStackView.topAnchor.constraint(equalTo: jobLocationLabel.bottomAnchor, constant: 10),
+            locationStackView.leftAnchor.constraint(equalTo: container.leftAnchor, constant:  12),
+            
+            ambulanciaImage.heightAnchor.constraint(equalToConstant: kheight),
+            ambulanciaImage.widthAnchor.constraint(equalToConstant: kwidth)
+        ])
+    }
+    
+    private func setupBaseAdressLabel() {
+        container.addSubview(baseAdressLabel)
+        
+        
+        NSLayoutConstraint.activate([
+            baseAdressLabel.topAnchor.constraint(equalTo: locationStackView.bottomAnchor, constant: 12),
+            baseAdressLabel.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 12),
         ])
     }
     

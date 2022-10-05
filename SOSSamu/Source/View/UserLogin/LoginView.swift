@@ -46,7 +46,7 @@ class LoginView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .white
+        backgroundColor = .viewColor
         setupIdUserLabel()
         setupIdUserTextField()
         setupSenhaLabel()
