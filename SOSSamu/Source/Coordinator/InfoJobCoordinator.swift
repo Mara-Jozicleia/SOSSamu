@@ -25,8 +25,17 @@ class InfoJobCoordinator: Coordinator {
             
             self.showDetailCallView()
         }
+        viewController.onTapMenuButton = {
+            self.showMenuView()
+        }
         
         self.navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func showMenuView() {
+        
+        let coordinator = MenuViewCoordinator(navigationController: self.navigationController)
+        coordinator.start()
     }
     
     private func showDetailCallView() {

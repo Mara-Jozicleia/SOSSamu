@@ -10,16 +10,16 @@ import UIKit
 class DetailCallViewController: UIViewController {
     
     var detailCallView = DetailCallView()
+    var  onCallButton:(() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view = detailCallView
 
-        
-   }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        view.backgroundColor = .viewColor
-//    }
-
+        detailCallView.onCallButton = {
+            self.onCallButton?()
+            self.dismiss(animated: true)
+        }
+    }
+    
 }

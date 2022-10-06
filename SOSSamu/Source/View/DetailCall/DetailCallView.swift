@@ -9,6 +9,8 @@ import UIKit
 
 class DetailCallView: UIView {
     
+    var  onCallButton:(() -> Void)?
+
     lazy var headerView: UIView = {
         let view = UIView()
         view.backgroundColor = .viewO
@@ -39,9 +41,9 @@ class DetailCallView: UIView {
         return label
     }()
     
-
+    
     lazy var localPatientLabel: UILabel = {
-        let label = LabelView(text: "Localização paciente", textColor: .textColor, font: UIFont(name: "Agenda", size: 18), nLines: .zero)
+        let label = LabelView(text: " Localização paciente", textColor: .textColor, font: UIFont(name: "Agenda", size: 18), nLines: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.accessibilityLabel = label.text
@@ -49,10 +51,10 @@ class DetailCallView: UIView {
     }()
     
     lazy var patientAdressLabel: UILabel = {
-        let label = LabelView(text: "Rua Cidade Beloma, 123 - Ipiranga", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
+        let label = LabelView(text: " R Cidade Beloma, 123 - Ipiranga", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-
+        
         label.accessibilityLabel = label.text
         return label
     }()
@@ -60,7 +62,7 @@ class DetailCallView: UIView {
         let stack = UIStackView(arrangedSubviews: [localPatientLabel, patientAdressLabel])
         stack.axis = .vertical
         stack.distribution = .fill
-        stack.alignment = .fill
+        stack.backgroundColor = .viewLocalColor
         stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
         
@@ -68,7 +70,7 @@ class DetailCallView: UIView {
     }()
     
     lazy var localHospitalLabel: UILabel = {
-        let label = LabelView(text: "Localização hospital", textColor: .textColor, font: UIFont(name: "Agenda", size: 18), nLines: .zero)
+        let label = LabelView(text: " Localização hospital", textColor: .textColor, font: UIFont(name: "Agenda", size: 18), nLines: .zero)
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.textAlignment = .left
         label.accessibilityLabel = label.text
@@ -76,7 +78,7 @@ class DetailCallView: UIView {
     }()
     
     lazy var hospitalAdressLabel: UILabel = {
-        let label = LabelView(text: "Rua Santos Dumond, 123 - Ipiranga", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
+        let label = LabelView(text: " R Santos Dumond, 123 - Ipiranga", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         label.accessibilityLabel = label.text
@@ -86,14 +88,13 @@ class DetailCallView: UIView {
         let stack = UIStackView(arrangedSubviews: [localHospitalLabel, hospitalAdressLabel])
         stack.axis = .vertical
         stack.distribution = .fill
-        stack.alignment = .fill
         stack.spacing = 10
-        stack.backgroundColor = .yellow
+        stack.backgroundColor = .viewLocalColor
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         return stack
     }()
-
+    
     lazy var descriptionView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -103,18 +104,19 @@ class DetailCallView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     lazy var locationView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
-    lazy var loginButton: UIButton = {
-        let button = ButtonView(backgroundColor: .buttonColor, titleColor: .white, text: "Iniciar chamado", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
-        
+    
+    lazy var callButton: UIButton = {
+        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "Iniciar chamado", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
+        
     }()
     
     init() {
@@ -128,6 +130,7 @@ class DetailCallView: UIView {
         setupLocationView()
         setupLocationPatientStackView()
         setupLocationHospitalStackView()
+        setupLoginButton()
     }
     
     required init?(coder: NSCoder) {
@@ -160,10 +163,10 @@ class DetailCallView: UIView {
         addSubview(descriptionView)
         
         NSLayoutConstraint.activate([
-            descriptionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 50),
+            descriptionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 60),
             descriptionView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             descriptionView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
-            descriptionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.18),
+            descriptionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.20),
             
         ])
     }
@@ -199,15 +202,16 @@ class DetailCallView: UIView {
             
         ])
     }
-        private func setupLocationPatientStackView() {
-            locationView.addSubview(locationPatientStackView)
-            
-            NSLayoutConstraint.activate([
-                locationPatientStackView.topAnchor.constraint(equalTo: locationView.topAnchor, constant: 10),
-                locationPatientStackView.rightAnchor.constraint(equalTo: locationView.rightAnchor, constant: -8),
-                locationPatientStackView.leftAnchor.constraint(equalTo: locationView.leftAnchor, constant: 8),
-            ])
-        }
+    private func setupLocationPatientStackView() {
+        locationView.addSubview(locationPatientStackView)
+        
+        NSLayoutConstraint.activate([
+            locationPatientStackView.topAnchor.constraint(equalTo: locationView.topAnchor, constant: 10),
+            locationPatientStackView.rightAnchor.constraint(equalTo: locationView.rightAnchor, constant: -8),
+            locationPatientStackView.leftAnchor.constraint(equalTo: locationView.leftAnchor, constant: 8),
+        ])
+    }
+    
     private func setupLocationHospitalStackView() {
         locationView.addSubview(locationHospitalStackView)
         
@@ -217,4 +221,20 @@ class DetailCallView: UIView {
             locationHospitalStackView.leftAnchor.constraint(equalTo: locationView.leftAnchor, constant: 8),
         ])
     }
+    private func setupLoginButton() {
+        addSubview(callButton)
+        
+        callButton.addTarget(self, action: #selector(TapCallButton), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            callButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 45),
+            callButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -45),
+            callButton.heightAnchor.constraint(equalToConstant: 50),
+            callButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30 )
+        ])
     }
+    
+    @objc func TapCallButton(sender: UIButton) {
+        self.onCallButton?()
+    }
+}

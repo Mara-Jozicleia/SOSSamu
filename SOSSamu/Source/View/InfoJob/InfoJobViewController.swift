@@ -11,6 +11,8 @@ class InfoJobViewController: UIViewController {
 
     var infoJobView = InfoJobView()
     var onTapAlertButton:(() -> Void)?
+    var onTapMenuButton:(() -> Void)?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,9 @@ class InfoJobViewController: UIViewController {
         
         infoJobView.onTapAlertButton = {
             self.onTapAlertButton?()
+        }
+        infoJobView.onTapMenuButton = {
+            self.onTapMenuButton?()
         }
     }
 }

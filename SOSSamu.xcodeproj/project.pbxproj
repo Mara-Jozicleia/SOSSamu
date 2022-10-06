@@ -13,6 +13,9 @@
 		AC33A88D28E4EF1A00AC2E3A /* InfoJobCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */; };
 		ACA79F0528EB7C4400F137F5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA79F0428EB7C4300F137F5 /* MapViewController.swift */; };
 		ACA79F0728EB80DF00F137F5 /* MapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA79F0628EB80DF00F137F5 /* MapViewCoordinator.swift */; };
+		ACB8651028EE3C0A008BAD97 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8650F28EE3C0A008BAD97 /* MenuView.swift */; };
+		ACB8651228EE3FCF008BAD97 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8651128EE3FCF008BAD97 /* MenuViewController.swift */; };
+		ACB8651428EE3FF9008BAD97 /* MenuViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8651328EE3FF9008BAD97 /* MenuViewCoordinator.swift */; };
 		ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */; };
 		ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */; };
 		ACC430FB28D3AFB100FBBDCD /* SOSSamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACC430F928D3AFB100FBBDCD /* SOSSamu.xcdatamodeld */; };
@@ -69,6 +72,9 @@
 		AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoJobCoordinator.swift; sourceTree = "<group>"; };
 		ACA79F0428EB7C4300F137F5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ACA79F0628EB80DF00F137F5 /* MapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCoordinator.swift; sourceTree = "<group>"; };
+		ACB8650F28EE3C0A008BAD97 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		ACB8651128EE3FCF008BAD97 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		ACB8651328EE3FF9008BAD97 /* MenuViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCoordinator.swift; sourceTree = "<group>"; };
 		ACC430ED28D3AFB100FBBDCD /* SOSSamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOSSamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC430F028D3AFB100FBBDCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC430F228D3AFB100FBBDCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +137,15 @@
 				AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */,
 			);
 			path = InfoJob;
+			sourceTree = "<group>";
+		};
+		ACB8650E28EE3BB0008BAD97 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				ACB8650F28EE3C0A008BAD97 /* MenuView.swift */,
+				ACB8651128EE3FCF008BAD97 /* MenuViewController.swift */,
+			);
+			path = MenuView;
 			sourceTree = "<group>";
 		};
 		ACC430E428D3AFB100FBBDCD = {
@@ -226,6 +241,7 @@
 		ACC4312828D3B8C600FBBDCD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACB8650E28EE3BB0008BAD97 /* MenuView */,
 				AC33A88928E4EEBC00AC2E3A /* InfoJob */,
 				ACE8307128D5132900E18B2A /* DetailCall */,
 				ACC4312A28D3B92700FBBDCD /* UserLogin */,
@@ -271,6 +287,7 @@
 				ACE8307428D51E6100E18B2A /* DetailCallViewCoordinator.swift */,
 				AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */,
 				ACA79F0628EB80DF00F137F5 /* MapViewCoordinator.swift */,
+				ACB8651328EE3FF9008BAD97 /* MenuViewCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -424,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB8651428EE3FF9008BAD97 /* MenuViewCoordinator.swift in Sources */,
 				ACC4313028D3C05C00FBBDCD /* TextFieldView.swift in Sources */,
 				ACE8307728D5237F00E18B2A /* DetailCallViewController.swift in Sources */,
 				ACE8306B28D500C700E18B2A /* Colors.swift in Sources */,
@@ -431,6 +449,7 @@
 				ACA79F0728EB80DF00F137F5 /* MapViewCoordinator.swift in Sources */,
 				ACE8306E28D50A0E00E18B2A /* LoginCoordinator.swift in Sources */,
 				ACC4313228D3C44000FBBDCD /* ButtonView.swift in Sources */,
+				ACB8651028EE3C0A008BAD97 /* MenuView.swift in Sources */,
 				AC0DA93328E79CBC002A1E15 /* SwitchButton.swift in Sources */,
 				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
 				ACE8EF2C28DE5BC100AEEBB8 /* ActionKeyboardView.swift in Sources */,
@@ -445,6 +464,7 @@
 				ACA79F0528EB7C4400F137F5 /* MapViewController.swift in Sources */,
 				AC33A88828E4EEAD00AC2E3A /* InfoJobView.swift in Sources */,
 				ACC4312E28D3BD0F00FBBDCD /* LabelView.swift in Sources */,
+				ACB8651228EE3FCF008BAD97 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,8 +629,8 @@
 		ACC4311B28D3AFB500FBBDCD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -635,8 +655,8 @@
 		ACC4311C28D3AFB500FBBDCD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

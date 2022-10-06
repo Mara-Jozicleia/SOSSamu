@@ -10,13 +10,12 @@ import UIKit
 class InfoJobView: UIView {
     
     var onTapAlertButton:(() -> Void)?
+    var onTapMenuButton:(() -> Void)?
 
-    var menuIcon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "menu")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+    lazy var menuButton: UIButton = {
+        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "", font: UIFont(name:"Agenda", size: 0), cRadius: 0, border: 0)
+        button.setImage(UIImage(named: "menu"), for: .normal)
+        return button
     }()
     
     var ambulanciaImage: UIImageView = {
@@ -115,9 +114,8 @@ class InfoJobView: UIView {
         return view
     }()
     lazy var alertButton: UIButton = {
-        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "Entrar", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "", font: UIFont(name:"Agenda", size: 0), cRadius: 0, border: 0)
         button.setImage(UIImage(named: "alert"), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
     
@@ -163,16 +161,18 @@ class InfoJobView: UIView {
         ])
     }
     private func setupMenuIcon() {
-        headerView.addSubview(menuIcon)
+        headerView.addSubview(menuButton)
         
+        menuButton.addTarget(self, action: #selector(onMenuButton), for: .touchUpInside)
+
         let kheight: CGFloat = 35
         let kwidth: CGFloat = 35
         
         NSLayoutConstraint.activate([
-            menuIcon.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
-            menuIcon.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -10),
-            menuIcon.heightAnchor.constraint(equalToConstant: kheight),
-            menuIcon.widthAnchor.constraint(equalToConstant: kwidth)
+            menuButton.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+            menuButton.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -10),
+            menuButton.heightAnchor.constraint(equalToConstant: kheight),
+            menuButton.widthAnchor.constraint(equalToConstant: kwidth)
             ])
     }
     
@@ -259,6 +259,9 @@ class InfoJobView: UIView {
         ])
     }
     
+    @objc func onMenuButton(sender: UIButton){
+        self.onTapMenuButton?()
+    }
     
     @objc func onAlertButton(sender: UIButton) {
         self.onTapAlertButton?()

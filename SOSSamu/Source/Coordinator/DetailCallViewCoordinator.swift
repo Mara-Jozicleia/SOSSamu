@@ -20,8 +20,19 @@ class DetailCallViewCoordinator: Coordinator {
     func start() {
         
         let viewController = DetailCallViewController()
+        viewController.onCallButton = {
+            self.showMapView()
+
+        }
         
-        self.navigationController.pushViewController(viewController, animated: true)
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.accessibilityViewIsModal = true
+        self.navigationController.present(viewController, animated: true, completion: nil)
             
     }
+    private func showMapView() {
+        let coordinator = MapViewCoordinator(navigationController: self.navigationController)
+        coordinator.start()
+    }
+    
 }

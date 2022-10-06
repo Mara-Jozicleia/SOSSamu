@@ -14,7 +14,6 @@ class MapViewController: UIViewController {
     
     let mapView: MKMapView = {
         let map = MKMapView()
-       // map.overrideUserInterfaceStyle = .dark
         map.translatesAutoresizingMaskIntoConstraints = false
         return map
     }()
@@ -27,12 +26,10 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setMapConstraints()
         setCallButton()
-        
     }
-    
+
     func setMapConstraints(){
         view.addSubview(mapView)
         NSLayoutConstraint.activate([
