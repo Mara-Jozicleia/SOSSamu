@@ -26,8 +26,8 @@ class DetailCallView: UIView {
     }()
     
     lazy var descriptionLabel: UILabel = {
-        let label = LabelView(text: "Descrição do Paciente", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
-        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        let label = LabelView(text: "Descrição do Paciente", textColor: .textColor, font: UIFont(name: "Agenda", size: 22), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         label.textAlignment = .center
         label.accessibilityLabel = label.text
         return label
@@ -36,7 +36,7 @@ class DetailCallView: UIView {
     lazy var descriptionPatientLabel: UILabel = {
         let view = UILabel()
         let label = LabelView(text: "Colisão de 2 carros, com 3 vítimas envolvidas. Duas com ferimentos leves e uma com ferimentos graves e com sangramento na região da cabeça.", textColor: .black, font: UIFont(name: "Agenda", size: 18), nLines: .zero)
-        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
         label.accessibilityLabel = label.text
         return label
     }()
@@ -166,7 +166,7 @@ class DetailCallView: UIView {
             descriptionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 60),
             descriptionView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             descriptionView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
-            descriptionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.20),
+            descriptionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.22),
             
         ])
     }

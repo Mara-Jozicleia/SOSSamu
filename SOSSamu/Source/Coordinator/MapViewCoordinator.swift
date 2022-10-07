@@ -16,8 +16,9 @@ class MapViewCoordinator: Coordinator {
     }
     
     func start() {
-        
         let viewController = MapViewController()
+        viewController.navigationItem.hidesBackButton = true
+
         viewController.onCallButton = {
             self.returnInfoJobView()
         }

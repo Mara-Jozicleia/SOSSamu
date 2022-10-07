@@ -21,6 +21,7 @@ class InfoJobCoordinator: Coordinator {
     func start() {
         
         let viewController = InfoJobViewController()
+        viewController.navigationItem.hidesBackButton = true
         viewController.onTapAlertButton = {
             
             self.showDetailCallView()
