@@ -7,52 +7,128 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
-    var  onCallButton:(() -> Void)?
+    var  onFinishCallButton:(() -> Void)?
+    var  onBackButton:(() -> Void)?
     
-    let mapView: MKMapView = {
-        let map = MKMapView()
-        map.translatesAutoresizingMaskIntoConstraints = false
-        return map
-    }()
-    let callButton: UIButton = {
-        let button = ButtonView(backgroundColor: .white, titleColor: .viewO, text: "Finalizar chamado", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        return button
-    }()
+    var mapview = MapView()
     
+    let locationManager = CLLocationManager()
+    let regionInMeters: Double = 1000
+    var previousLocation: CLLocation?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setMapConstraints()
-        setCallButton()
-    }
-
-    func setMapConstraints(){
-        view.addSubview(mapView)
-        NSLayoutConstraint.activate([
-            mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            mapView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            mapView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ])
-    }
-    func setCallButton(){
-        mapView.addSubview(callButton)
+        view = mapview
+        checkLocationServices()
         
-        callButton.addTarget(self, action: #selector(TapCallButton), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate([
-            callButton.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 45),
-            callButton.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -45),
-            callButton.heightAnchor.constraint(equalToConstant: 50),
-            callButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -22 )
-        ])
+        mapview.onFinishCallButton = {
+            self.onFinishCallButton?()
+        }
     }
     
-    @objc func TapCallButton(sender: UIButton) {
-        self.onCallButton?()
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    
+    func centerViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapview.mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Show alert letting the user know they have to turn this on.
+        }
+    }
+    
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            startTackingUserLocation()
+        case .denied:
+            // Show alert instructing them how to turn on permissions
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // Show an alert letting them know what's up
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    func startTackingUserLocation() {
+        mapview.mapView.showsUserLocation = true
+        centerViewOnUserLocation()
+        locationManager.startUpdatingLocation()
+        previousLocation = getCenterLocation(for: mapview.mapView)
+    }
+    
+    
+    func getCenterLocation(for mapView: MKMapView) -> CLLocation {
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+}
+
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
+}
+
+
+extension MapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCenterLocation(for: mapView)
+        let geoCoder = CLGeocoder()
+        
+        guard let previousLocation = self.previousLocation else { return }
+        
+        guard center.distance(from: previousLocation) > 50 else { return }
+        self.previousLocation = center
+        
+        geoCoder.reverseGeocodeLocation(center) { [weak self] (placemarks, error) in
+            guard let self = self else { return }
+            
+            if let _ = error {
+                //TODO: Show alert informing the user
+                return
+            }
+            
+            guard let placemark = placemarks?.first else {
+                //TODO: Show alert informing the user
+                return
+            }
+            
+            let streetNumber = placemark.subThoroughfare ?? ""
+            let streetName = placemark.thoroughfare ?? ""
+            
+            DispatchQueue.main.async { [self] in
+                self.mapview.addressLabel.text = "\(streetNumber) \(streetName)"
+            }
+        }
     }
 }

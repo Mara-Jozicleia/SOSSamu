@@ -20,16 +20,16 @@ class MenuViewCoordinator: Coordinator {
         viewController.navigationItem.hidesBackButton = true
         
         viewController.onbackButton = {
-            self.returnInfoJobView()
+            self.backView()
         }
 
         
         self.navigationController.pushViewController(viewController, animated: true)
     }
     
-    private func returnInfoJobView() {
+    private func backView() {
         
-     //   let coordinator = UINavigationController.pushViewController(InfoJobViewController as UIViewController)
-        //coordinator.start()
+        let coordinator = InfoJobCoordinator(navigationController: self.navigationController)
+        coordinator.start()
     }
 }

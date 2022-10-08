@@ -18,16 +18,24 @@ class MapViewCoordinator: Coordinator {
     func start() {
         let viewController = MapViewController()
         viewController.navigationItem.hidesBackButton = true
-
-        viewController.onCallButton = {
-            self.returnInfoJobView()
+        
+        viewController.onBackButton = {
+            self.backDetailsView()
         }
+        
+        viewController.onFinishCallButton = {
+            self.backInfoJobView()
+        }
+        
         
         self.navigationController.pushViewController(viewController, animated: true)
     }
+    private func backDetailsView() {
+        let coordinator = DetailCallViewCoordinator(navigationController: self.navigationController)
+        coordinator.start()
+    }
     
-    private func returnInfoJobView() {
-        
+    private func backInfoJobView() {
         let coordinator = InfoJobCoordinator(navigationController: self.navigationController)
         coordinator.start()
     }

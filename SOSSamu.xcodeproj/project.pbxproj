@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC0DA93328E79CBC002A1E15 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0DA93228E79CBC002A1E15 /* SwitchButton.swift */; };
+		AC2539E628F0BEDB004DEA55 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2539E528F0BEDB004DEA55 /* MapView.swift */; };
 		AC33A88828E4EEAD00AC2E3A /* InfoJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88728E4EEAD00AC2E3A /* InfoJobView.swift */; };
 		AC33A88B28E4EEF300AC2E3A /* InfoJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */; };
 		AC33A88D28E4EF1A00AC2E3A /* InfoJobCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		AC0DA93228E79CBC002A1E15 /* SwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
+		AC2539E528F0BEDB004DEA55 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		AC33A88728E4EEAD00AC2E3A /* InfoJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoJobView.swift; path = SOSSamu/Source/View/InfoJob/InfoJobView.swift; sourceTree = SOURCE_ROOT; };
 		AC33A88A28E4EEF300AC2E3A /* InfoJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoJobViewController.swift; sourceTree = "<group>"; };
 		AC33A88C28E4EF1A00AC2E3A /* InfoJobCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoJobCoordinator.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				ACC4312A28D3B92700FBBDCD /* UserLogin */,
 				ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */,
 				ACA79F0428EB7C4300F137F5 /* MapViewController.swift */,
+				AC2539E528F0BEDB004DEA55 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				AC0DA93328E79CBC002A1E15 /* SwitchButton.swift in Sources */,
 				ACC430F128D3AFB100FBBDCD /* AppDelegate.swift in Sources */,
 				ACE8EF2C28DE5BC100AEEBB8 /* ActionKeyboardView.swift in Sources */,
+				AC2539E628F0BEDB004DEA55 /* MapView.swift in Sources */,
 				ACE8307328D5138100E18B2A /* DetailCallView.swift in Sources */,
 				ACC430F328D3AFB100FBBDCD /* SceneDelegate.swift in Sources */,
 				ACE8307028D50A4800E18B2A /* Coordinator.swift in Sources */,
@@ -639,6 +643,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,6 +670,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

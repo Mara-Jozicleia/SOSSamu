@@ -49,7 +49,7 @@ class InfoJobView: UIView {
         return label
     }()
     
-    lazy var baseAdressLabel: UILabel = {
+    lazy var baseAddressLabel: UILabel = {
         let label = LabelView(text: "Rua Euclides Pacheco, 122 - Mooca SP ", textColor: .textColor, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 17, weight: .light)
@@ -129,7 +129,7 @@ class InfoJobView: UIView {
         setupContainer()
         setupJobLocationLabel()
         setupLocationStackView()
-        setupBaseAdressLabel()
+        setupBaseAddressLabel()
         setupAvailableStackView()
         setupFooterView()
         setupAlertImage()
@@ -212,13 +212,13 @@ class InfoJobView: UIView {
         ])
     }
     
-    private func setupBaseAdressLabel() {
-        container.addSubview(baseAdressLabel)
+    private func setupBaseAddressLabel() {
+        container.addSubview(baseAddressLabel)
         
         
         NSLayoutConstraint.activate([
-            baseAdressLabel.topAnchor.constraint(equalTo: locationStackView.bottomAnchor, constant: 12),
-            baseAdressLabel.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 12),
+            baseAddressLabel.topAnchor.constraint(equalTo: locationStackView.bottomAnchor, constant: 12),
+            baseAddressLabel.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 12),
         ])
     }
     

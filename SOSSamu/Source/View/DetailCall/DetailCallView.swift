@@ -50,7 +50,7 @@ class DetailCallView: UIView {
         return label
     }()
     
-    lazy var patientAdressLabel: UILabel = {
+    lazy var patientAddressLabel: UILabel = {
         let label = LabelView(text: " R Cidade Beloma, 123 - Ipiranga", textColor: .textColor, font: UIFont(name: "Euphemia UCAS", size: 17), nLines: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
@@ -59,7 +59,7 @@ class DetailCallView: UIView {
         return label
     }()
     lazy var locationPatientStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [localPatientLabel, patientAdressLabel])
+        let stack = UIStackView(arrangedSubviews: [localPatientLabel, patientAddressLabel])
         stack.axis = .vertical
         stack.distribution = .fill
         stack.backgroundColor = .viewLocalColor

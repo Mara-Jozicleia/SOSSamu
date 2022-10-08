@@ -18,39 +18,6 @@ class MenuView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    var profileImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "profile")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    var suporteImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "suporte")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    var rulesImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "doc")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    var logoutImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "logout")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     lazy var backButton: UIButton = {
         let button = ButtonView(backgroundColor: .viewColor, titleColor: .white, text: "", font: UIFont(name:"Agenda", size: 0), cRadius: 0, border: 0)
         button.setImage(UIImage(named: "return"), for: .normal)
@@ -78,67 +45,33 @@ class MenuView: UIView {
         label.accessibilityLabel = label.text
         return label
     }()
-    
-    lazy var mycountlabel: UILabel = {
-        
-        let label = LabelView(text: "Minha Conta", textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: 0)
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
 
-        label.accessibilityLabel = label.text
-
-        return label
-    }()
+    let icon = ["profile", "suporte", "doc", "logout"]
+    let text = ["Minha conta", "Supote", "Política de privacidade", "Sair"]
     
-    lazy var suporteLabel: UILabel = {
-        let label = LabelView(text: "Suporte", textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: 0)
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-
-        label.accessibilityLabel = label.text
-        return label
-    }()
-    
-    lazy var rulesLabel: UILabel = {
-        
-        let label = LabelView(text: "Política de privacidade", textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: 0)
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-
-        label.accessibilityLabel = label.text
-        return label
-    }()
-    
-    lazy var logoutLabel: UILabel = {
-        
-        let label = LabelView(text: "Sair", textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: 0)
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-
-        label.accessibilityLabel = label.text
-        return label
-    }()
-    
-    //let icon = ["profile", "suporte","doc", "logout"]
-    
-    lazy var iconImage: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
-
     lazy var stackView: UIStackView = {
-        let stackview = UIStackView(arrangedSubviews: [profileImage,mycountlabel, suporteLabel, rulesLabel, logoutLabel])
+        let stackview = UIStackView()
         stackview.axis = .vertical
-        stackview.distribution = .fillEqually
+        stackview.distribution = .fill
         stackview.alignment = .fill
-        stackview.spacing = 8
+        stackview.spacing = 24
         stackview.translatesAutoresizingMaskIntoConstraints = false
-  
-        return stackview
-    }()
-    lazy var stackViewh: UIStackView = {
-        let stackview = UIStackView(arrangedSubviews: [profileImage, suporteImage, rulesImage, logoutImage])
-        stackview.axis = .vertical
-        stackview.distribution = .fillEqually
-        stackview.alignment = .fill
-        stackview.spacing = 8
-        stackview.translatesAutoresizingMaskIntoConstraints = false
+        for index in 0...3 {
+            let label = LabelView(text: text[index], textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: 0)
+            let iconImage = UIImageView()
+            iconImage.heightAnchor.constraint(equalTo: iconImage.widthAnchor,multiplier: 1.0/1.0).isActive = true
+
+            iconImage.image = UIImage(named: icon[index])
+            
+            let stack = UIStackView(arrangedSubviews: [iconImage, label])
+            stack.spacing = 16
+            stack.axis = .horizontal
+            stack.distribution = .fill
+            stack.alignment = .fill
+            stack.translatesAutoresizingMaskIntoConstraints = false
+
+            stackview.addArrangedSubview(stack)
+        }
   
         return stackview
     }()
@@ -149,9 +82,8 @@ class MenuView: UIView {
         setupBackButtonImage()
         setupLogoImage()
         setupNameUsersLabel()
-        setupsViewView()
+        setupsView()
         setupStackView()
-        setupStackViewh()
         backgroundColor = .viewO
         
     }
@@ -177,12 +109,12 @@ class MenuView: UIView {
         
         backButton.addTarget(self, action: #selector(TapbackButton), for: .touchUpInside)
 
-        let kheight: CGFloat = 30
-        let kwidth: CGFloat = 30
+        let kheight: CGFloat = 35
+        let kwidth: CGFloat = 35
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 70),
-            backButton.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 20),
+            backButton.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 80),
+            backButton.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 15),
             backButton.heightAnchor.constraint(equalToConstant: kheight),
             backButton.widthAnchor.constraint(equalToConstant: kwidth)
 
@@ -195,7 +127,7 @@ class MenuView: UIView {
         let kwidth: CGFloat = 50
         
         NSLayoutConstraint.activate([
-            logoImage.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 60),
+            logoImage.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 70),
             logoImage.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -10),
             logoImage.heightAnchor.constraint(equalToConstant: kheight),
             logoImage.widthAnchor.constraint(equalToConstant: kwidth)
@@ -211,7 +143,7 @@ class MenuView: UIView {
         ])
     }
     
-    private func setupsViewView() {
+    private func setupsView() {
         addSubview(sView)
         
     NSLayoutConstraint.activate([
@@ -233,17 +165,7 @@ class MenuView: UIView {
             stackView.bottomAnchor.constraint(equalTo: sView.bottomAnchor, constant: -20)
         ])
     }
-    private func setupStackViewh() {
-        sView.addSubview(stackViewh)
-
-        NSLayoutConstraint.activate([
-            stackViewh.centerYAnchor.constraint(equalTo: sView.centerYAnchor),
-            stackView.rightAnchor.constraint(equalTo: stackView.leftAnchor, constant: -8),
-
-            stackView.leftAnchor.constraint(equalTo: sView.leftAnchor, constant: 20),
-            stackView.bottomAnchor.constraint(equalTo: sView.bottomAnchor, constant: -20)
-        ])
-    }
+    
     @objc func TapbackButton(sender: UIButton) {
         self.onbackButton?()
     }
