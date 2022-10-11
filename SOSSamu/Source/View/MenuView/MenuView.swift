@@ -19,8 +19,8 @@ class MenuView: UIView {
         return imageView
     }()
     lazy var backButton: UIButton = {
-        let button = ButtonView(backgroundColor: .viewColor, titleColor: .white, text: "", font: UIFont(name:"Agenda", size: 0), cRadius: 0, border: 0)
-        button.setImage(UIImage(named: "return"), for: .normal)
+        let button = ButtonView(backgroundColor: .viewColor, titleColor: .textColor, text: "←", font: UIFont(name:"Agenda", size: 25), cRadius: 0, border: 0)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         return button
     }()
     

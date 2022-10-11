@@ -10,6 +10,7 @@ import MapKit
 
 class MapView: UIView {
     
+    var  closeMap:(() -> Void)?
     var  onFinishCallButton:(() -> Void)?
     var  onGoButton:(() -> Void)?
     
@@ -27,7 +28,14 @@ class MapView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+    lazy var closeMapButton: UIButton = {
+
+        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "×", font: UIFont(name:"Avenir Next", size: 30), cRadius: 0, border: 0)
+        button.layer.cornerRadius = 25
+        button.clipsToBounds = true
+        return button
+
+    }()
     lazy var routerButton: UIButton = {
         let button = UIButton()
         button.setTitle("Ir", for: .normal)
@@ -60,6 +68,7 @@ class MapView: UIView {
         setupAddressLabel()
         setMapConstraints()
         setpinImage()
+        setupCloseMapButton()
         setRouterButton()
         setCallButton()
     }
@@ -72,7 +81,7 @@ class MapView: UIView {
         addSubview(addressLabel)
         
         NSLayoutConstraint.activate([
-            addressLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            addressLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 90),
             addressLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
             addressLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10)
         ])
@@ -81,7 +90,7 @@ class MapView: UIView {
     func setMapConstraints(){
         addSubview(mapView)
         NSLayoutConstraint.activate([
-            mapView.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 0),
+            mapView.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 10),
             mapView.leftAnchor.constraint(equalTo: self.leftAnchor),
             mapView.rightAnchor.constraint(equalTo: self.rightAnchor),
             mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
@@ -100,6 +109,24 @@ class MapView: UIView {
             pinImage.heightAnchor.constraint(equalToConstant: kheight),
             pinImage.widthAnchor.constraint(equalToConstant: kwidth)
         ])
+    }
+    private func setupCloseMapButton() {
+
+        addSubview(closeMapButton)
+
+        let kheight: CGFloat = 50
+        let kwidth: CGFloat = 50
+        closeMapButton.addTarget(self, action: #selector(TapcloseMapButton), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+
+            closeMapButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: -15),
+            closeMapButton.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -5),
+            closeMapButton.heightAnchor.constraint(equalToConstant: kheight),
+            closeMapButton.widthAnchor.constraint(equalToConstant: kwidth)
+
+        ])
+
     }
     
     func setCallButton(){
@@ -127,6 +154,11 @@ class MapView: UIView {
             routerButton.heightAnchor.constraint(equalToConstant: kheight),
             routerButton.widthAnchor.constraint(equalToConstant: kwidth)
         ])
+    }
+    
+    @objc func TapcloseMapButton(sender: UIButton) {
+        self.closeMap?()
+
     }
     
     @objc func TapRouterButton(sender: UIButton) {

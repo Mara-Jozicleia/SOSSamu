@@ -10,8 +10,6 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Permitir Localização</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Utilizamos sua localização para navegação</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>agenda-lightcondensed.ttf</string>

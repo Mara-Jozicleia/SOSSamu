@@ -8,7 +8,7 @@
 import UIKit
 
 class MapViewCoordinator: Coordinator {
-
+    
     var navigationController = UINavigationController()
     
     init(navigationController: UINavigationController){
@@ -16,17 +16,21 @@ class MapViewCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = MapViewViewController()
+        let viewController = MapViewController()
         viewController.navigationItem.hidesBackButton = true
         
-//       viewController.onGoButton = {
-//           viewController.getDirections()
-//      }
+        viewController.closeMap = {
+            self.backDetailsView()
+        }
         
-//        viewController.onFinishCallButton = {
-//            self.backInfoJobView()
-//        }
-//        
+        viewController.onGoButton = {
+            viewController.getDirections()
+        }
+        
+        viewController.onFinishCallButton = {
+            self.backInfoJobView()
+        }
+        
         
         self.navigationController.pushViewController(viewController, animated: true)
     }

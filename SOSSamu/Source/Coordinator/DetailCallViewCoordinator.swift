@@ -20,6 +20,10 @@ class DetailCallViewCoordinator: Coordinator {
     func start() {
         
         let viewController = DetailCallViewController()
+        
+        viewController.onbackButton = {
+            self.backInfoJobsView()
+        }
         viewController.onCallButton = {
             self.showMapView()
 
@@ -30,6 +34,12 @@ class DetailCallViewCoordinator: Coordinator {
         self.navigationController.present(viewController, animated: true, completion: nil)
             
     }
+    
+    private func backInfoJobsView() {
+        let coordinator = InfoJobCoordinator(navigationController: self.navigationController)
+        coordinator.start()
+    }
+    
     private func showMapView() {
         let coordinator = MapViewCoordinator(navigationController: self.navigationController)
         coordinator.start()

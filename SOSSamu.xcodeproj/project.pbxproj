@@ -47,8 +47,6 @@
 		ACE8307528D51E6100E18B2A /* DetailCallViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307428D51E6100E18B2A /* DetailCallViewCoordinator.swift */; };
 		ACE8307728D5237F00E18B2A /* DetailCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8307628D5237F00E18B2A /* DetailCallViewController.swift */; };
 		ACE8EF2C28DE5BC100AEEBB8 /* ActionKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */; };
-		ACFDEF3E28F4E49400B5D08F /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDEF3C28F4E49400B5D08F /* MapViewViewController.swift */; };
-		ACFDEF3F28F4E49400B5D08F /* MapViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACFDEF3D28F4E49400B5D08F /* MapViewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,8 +105,6 @@
 		ACE8307428D51E6100E18B2A /* DetailCallViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCallViewCoordinator.swift; sourceTree = "<group>"; };
 		ACE8307628D5237F00E18B2A /* DetailCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCallViewController.swift; sourceTree = "<group>"; };
 		ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionKeyboardView.swift; sourceTree = "<group>"; };
-		ACFDEF3C28F4E49400B5D08F /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
-		ACFDEF3D28F4E49400B5D08F /* MapViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,8 +250,6 @@
 				ACE8EF2B28DE5BC100AEEBB8 /* ActionKeyboardView.swift */,
 				ACA79F0428EB7C4300F137F5 /* MapViewController.swift */,
 				AC2539E528F0BEDB004DEA55 /* MapView.swift */,
-				ACFDEF3C28F4E49400B5D08F /* MapViewViewController.swift */,
-				ACFDEF3D28F4E49400B5D08F /* MapViewViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,7 +414,6 @@
 				ACC740CC28E65E1C00204940 /* agenda-lightcondensed.ttf in Resources */,
 				ACC430FD28D3AFB400FBBDCD /* Assets.xcassets in Resources */,
 				ACC740C328E65E1C00204940 /* agenda-light.ttf in Resources */,
-				ACFDEF3F28F4E49400B5D08F /* MapViewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +448,6 @@
 				ACC4313028D3C05C00FBBDCD /* TextFieldView.swift in Sources */,
 				ACE8307728D5237F00E18B2A /* DetailCallViewController.swift in Sources */,
 				ACE8306B28D500C700E18B2A /* Colors.swift in Sources */,
-				ACFDEF3E28F4E49400B5D08F /* MapViewViewController.swift in Sources */,
 				AC33A88B28E4EEF300AC2E3A /* InfoJobViewController.swift in Sources */,
 				ACA79F0728EB80DF00F137F5 /* MapViewCoordinator.swift in Sources */,
 				ACE8306E28D50A0E00E18B2A /* LoginCoordinator.swift in Sources */,
