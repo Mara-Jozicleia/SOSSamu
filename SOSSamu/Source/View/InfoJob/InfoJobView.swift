@@ -36,7 +36,7 @@ class InfoJobView: UIView {
     
     lazy var jobLocationLabel: UILabel = {
         let label = LabelView(text: "Local de trabalho:", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
-        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.accessibilityLabel = label.text
         return label
     }()
@@ -44,7 +44,7 @@ class InfoJobView: UIView {
     lazy var baseLocationLabel: UILabel = {
         let label = LabelView(text: "Base Ipiranga", textColor: .textColor, font: UIFont(name: "Agenda", size: 20), nLines: .zero)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.accessibilityLabel = label.text
         return label
     }()
@@ -52,7 +52,7 @@ class InfoJobView: UIView {
     lazy var baseAddressLabel: UILabel = {
         let label = LabelView(text: "Rua Euclides Pacheco, 122 - Mooca SP ", textColor: .textColor, font: UIFont(name: "Agenda", size: 17), nLines: .zero)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.accessibilityLabel = label.text
         return label
     }()

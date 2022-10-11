@@ -11,7 +11,7 @@ import MapKit
 class MapView: UIView {
     
     var  onFinishCallButton:(() -> Void)?
-    var  onBackButton:(() -> Void)?
+    var  onGoButton:(() -> Void)?
     
     
     let mapView: MKMapView = {
@@ -28,9 +28,14 @@ class MapView: UIView {
         return imageView
     }()
     
-    lazy var backButton: UIButton = {
-        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "", font: UIFont(name:"Agenda", size: 0), cRadius: 0, border: 0)
-        button.setImage(UIImage(named: "returnB"), for: .normal)
+    lazy var routerButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Ir", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = frame.size.height/2
+        button.clipsToBounds = true
+        button.backgroundColor = .viewO
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -55,6 +60,7 @@ class MapView: UIView {
         setupAddressLabel()
         setMapConstraints()
         setpinImage()
+        setRouterButton()
         setCallButton()
     }
     
@@ -87,7 +93,6 @@ class MapView: UIView {
         let kheight: CGFloat = 40
         let kwidth: CGFloat = 40
         
-        backButton.addTarget(self, action: #selector(TapbackButton), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             pinImage.centerXAnchor.constraint(equalTo: mapView.centerXAnchor,constant: 0),
@@ -109,23 +114,23 @@ class MapView: UIView {
             finishCallButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -22 )
         ])
     }
-    func setBackButton(){
-        mapView.addSubview(backButton)
-        let kheight: CGFloat = 30
+    func setRouterButton(){
+        mapView.addSubview(routerButton)
+        let kheight: CGFloat = 40
         let kwidth: CGFloat = 40
         
-        backButton.addTarget(self, action: #selector(TapbackButton), for: .touchUpInside)
+        routerButton.addTarget(self, action: #selector(TapRouterButton), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: mapView.topAnchor,constant: 90),
-            backButton.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 18),
-            backButton.heightAnchor.constraint(equalToConstant: kheight),
-            backButton.widthAnchor.constraint(equalToConstant: kwidth)
+            routerButton.topAnchor.constraint(equalTo: mapView.topAnchor,constant: 90),
+            routerButton.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 18),
+            routerButton.heightAnchor.constraint(equalToConstant: kheight),
+            routerButton.widthAnchor.constraint(equalToConstant: kwidth)
         ])
     }
     
-    @objc func TapbackButton(sender: UIButton) {
-        self.onBackButton?()
+    @objc func TapRouterButton(sender: UIButton) {
+        self.onGoButton?()
     }
     
     @objc func TapCallButton(sender: UIButton) {

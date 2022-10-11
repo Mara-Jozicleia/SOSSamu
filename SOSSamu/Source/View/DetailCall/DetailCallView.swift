@@ -35,8 +35,8 @@ class DetailCallView: UIView {
     
     lazy var descriptionPatientLabel: UILabel = {
         let view = UILabel()
-        let label = LabelView(text: "Colisão de 2 carros, com 3 vítimas envolvidas. Duas com ferimentos leves e uma com ferimentos graves e com sangramento na região da cabeça.", textColor: .black, font: UIFont(name: "Agenda", size: 18), nLines: .zero)
-        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        let label = LabelView(text: "Colisão de 2 carros, com 3 vítimas envolvidas. Duas com ferimentos leves e uma com ferimentos graves e com sangramento na região da cabeça.", textColor: .black, font: UIFont(name: "Avenir Next", size: 18), nLines: .zero)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.accessibilityLabel = label.text
         return label
     }()

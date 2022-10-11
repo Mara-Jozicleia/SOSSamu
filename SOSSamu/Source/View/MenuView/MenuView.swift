@@ -47,7 +47,7 @@ class MenuView: UIView {
     }()
 
     let icon = ["profile", "suporte", "doc", "logout"]
-    let text = ["Minha conta", "Supote", "Política de privacidade", "Sair"]
+    let text = ["Minha conta", "Suporte", "Política de privacidade", "Sair"]
     
     lazy var stackView: UIStackView = {
         let stackview = UIStackView()
