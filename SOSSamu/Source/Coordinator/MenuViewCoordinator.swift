@@ -28,8 +28,6 @@ class MenuViewCoordinator: Coordinator {
     }
     
     private func backView() {
-        
-        let coordinator = InfoJobCoordinator(navigationController: self.navigationController)
-        coordinator.start()
+        navigationController.popViewController(animated: true)
     }
 }

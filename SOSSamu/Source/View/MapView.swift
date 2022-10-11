@@ -48,7 +48,7 @@ class MapView: UIView {
     }()
     
     let finishCallButton: UIButton = {
-        let button = ButtonView(backgroundColor: .white, titleColor: .viewO, text: "Finalizar chamado", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        let button = ButtonView(backgroundColor: .white, titleColor: .viewO, text: "Iniciar rota", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
@@ -69,7 +69,7 @@ class MapView: UIView {
         setMapConstraints()
         setpinImage()
         setupCloseMapButton()
-        setRouterButton()
+        //setRouterButton()
         setCallButton()
     }
     

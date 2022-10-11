@@ -67,6 +67,7 @@ class LoginView: UIView {
             idUserLabel.topAnchor.constraint(equalTo: topAnchor, constant: 200),
             idUserLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
             idUserLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
+            
         ])
     }
     private func setupIdUserTextField() {
@@ -113,4 +114,6 @@ class LoginView: UIView {
     @objc func TapLoginButton(sender: UIButton) {
         self.onTapLoginButton?()
     }
+}
+extension LoginView: UITextViewDelegate {
 }
