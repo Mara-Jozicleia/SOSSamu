@@ -57,8 +57,9 @@ class MenuView: UIView {
         stackview.spacing = 24
         stackview.translatesAutoresizingMaskIntoConstraints = false
         for index in 0...3 {
-            let label = LabelView(text: text[index], textColor: .white, font: UIFont(name: "Agenda", size: 24), nLines: 0)
+            let label = LabelView(text: text[index], textColor: .white, font: UIFont(name: "Agenda", size: 20), nLines: 0)
             let iconImage = UIImageView()
+            label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
             iconImage.heightAnchor.constraint(equalTo: iconImage.widthAnchor,multiplier: 1.0/1.0).isActive = true
 
             iconImage.image = UIImage(named: icon[index])

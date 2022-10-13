@@ -20,4 +20,5 @@ extension UIColor {
 
 extension CGColor {
     static var borderColor = CGColor(red: 36/255, green: 40/255, blue: 48/255, alpha: 1.0)
+    static var borderO = CGColor(red: 247/255, green: 88/255, blue: 37/255, alpha: 1.0)
 }

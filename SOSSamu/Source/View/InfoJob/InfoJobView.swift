@@ -107,6 +107,20 @@ class InfoJobView: UIView {
         return stack
     }()
     
+    lazy var notification: UITextView = {
+        let textView = UITextView()
+        textView.backgroundColor = .lightGray
+        textView.layer.cornerRadius = 8.0
+        textView.text = "Você tem um novo chamado"
+        textView.textColor = .white
+        textView.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        textView.textAlignment = .center
+        
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textView
+    }()
+    
     lazy var footerView: UIView = {
         let view = UIView()
         view.backgroundColor = .viewO
@@ -131,6 +145,7 @@ class InfoJobView: UIView {
         setupLocationStackView()
         setupBaseAddressLabel()
         setupAvailableStackView()
+        setupNotification()
         setupFooterView()
         setupAlertImage()
     }
@@ -231,7 +246,20 @@ class InfoJobView: UIView {
             availableStackView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 32),
         ])
     }
-    
+    private func setupNotification() {
+        addSubview(notification)
+        let kheight: CGFloat = 80
+        let kwidth: CGFloat = 200
+        
+        alertButton.addTarget(self, action: #selector(onAlertButton), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            notification.topAnchor.constraint(equalTo: availableStackView.bottomAnchor, constant: 150),
+            notification.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            notification.heightAnchor.constraint(equalToConstant: kheight),
+            notification.widthAnchor.constraint(equalToConstant: kwidth)
+        ])
+    }
     private func setupFooterView() {
         addSubview(footerView)
         

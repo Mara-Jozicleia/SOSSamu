@@ -28,7 +28,7 @@ class MapViewCoordinator: Coordinator {
         }
         
         viewController.onFinishCallButton = {
-            viewController.getDirections()
+            self.backDetailsView()
         }
         
         

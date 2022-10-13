@@ -37,18 +37,17 @@ class MapView: UIView {
 
     }()
     lazy var routerButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Ir", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = frame.size.height/2
-        button.clipsToBounds = true
-        button.backgroundColor = .viewO
-        button.translatesAutoresizingMaskIntoConstraints = false
+        let button = ButtonView(backgroundColor: .white, titleColor: .viewO, text: "Iniciar rota", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        button.isHidden = false
+        button.layer.borderColor = .borderO
+        button.layer.borderWidth = 2
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
     
     let finishCallButton: UIButton = {
-        let button = ButtonView(backgroundColor: .white, titleColor: .viewO, text: "Iniciar rota", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        let button = ButtonView(backgroundColor: .viewO, titleColor: .white, text: "Finalizar chamado", font: UIFont(name:"Agenda", size: 20.0), cRadius: 25, border: 0)
+        button.isHidden = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
@@ -69,7 +68,7 @@ class MapView: UIView {
         setMapConstraints()
         setpinImage()
         setupCloseMapButton()
-        //setRouterButton()
+        setRouterButton()
         setCallButton()
     }
     
@@ -143,16 +142,14 @@ class MapView: UIView {
     }
     func setRouterButton(){
         mapView.addSubview(routerButton)
-        let kheight: CGFloat = 40
-        let kwidth: CGFloat = 40
         
         routerButton.addTarget(self, action: #selector(TapRouterButton), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            routerButton.topAnchor.constraint(equalTo: mapView.topAnchor,constant: 90),
-            routerButton.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 18),
-            routerButton.heightAnchor.constraint(equalToConstant: kheight),
-            routerButton.widthAnchor.constraint(equalToConstant: kwidth)
+            routerButton.leftAnchor.constraint(equalTo: mapView.leftAnchor, constant: 45),
+            routerButton.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -45),
+            routerButton.heightAnchor.constraint(equalToConstant: 50),
+            routerButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -22 )
         ])
     }
     
@@ -163,6 +160,8 @@ class MapView: UIView {
     
     @objc func TapRouterButton(sender: UIButton) {
         self.onGoButton?()
+        routerButton.isHidden = true
+        finishCallButton.isHidden = false
     }
     
     @objc func TapCallButton(sender: UIButton) {
