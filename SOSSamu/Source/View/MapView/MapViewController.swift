@@ -32,13 +32,14 @@ class MapViewController: UIViewController {
         view = mapview
         mapview.mapView.delegate = self
         checkLocationServices()
-
-        mapview.closeMap = {
-            self.closeMap?()
-        }
         mapview.onGoButton = {
             self.onGoButton?()
         }
+        
+        mapview.closeMap = {
+            self.closeMap?()
+        }
+        
         mapview.onFinishCallButton = {
             self.onFinishCallButton?()
         }

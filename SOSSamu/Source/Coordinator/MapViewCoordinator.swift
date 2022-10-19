@@ -19,18 +19,17 @@ class MapViewCoordinator: Coordinator {
         let viewController = MapViewController()
         viewController.navigationItem.hidesBackButton = true
         
-        viewController.closeMap = {
-            self.backDetailsView()
-        }
-        
         viewController.onGoButton = {
             viewController.getDirections()
         }
         
-        viewController.onFinishCallButton = {
+        viewController.closeMap = {
             self.backDetailsView()
         }
-        
+
+        viewController.onFinishCallButton = {
+            self.backInfoJobView()
+        }
         
         self.navigationController.pushViewController(viewController, animated: true)
     }
